@@ -1,0 +1,32 @@
+site_name: Discord-HVZ Docs
+
+nav:
+  - Home: index.md
+  - Setup: setup.md
+  - Running the Game: running_the_game.md
+  - Commands: commands.md
+  - Config Options: config_options.md
+
+theme:
+  name: material
+  logo: img/avatar.png
+  font:
+    text: Open Sans
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: green
+  features:
+    - navigation.instant
+    - navigation.sections
+    #- navigation.tabs
+    #- toc.integrate
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 6
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
