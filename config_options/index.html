@@ -275,6 +275,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#registration" class="md-nav__link">
     registration
   </a>
@@ -291,6 +298,34 @@
         <li class="md-nav__item">
   <a href="#silent_oz" class="md-nav__link">
     silent_oz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google_sheet_export" class="md-nav__link">
+    google_sheet_export
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sheet_ids" class="md-nav__link">
+    sheet_ids
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sheet_names" class="md-nav__link">
+    sheet_names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezone" class="md-nav__link">
+    timezone
   </a>
   
 </li>
@@ -405,6 +440,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#registration" class="md-nav__link">
     registration
   </a>
@@ -421,6 +463,34 @@
         <li class="md-nav__item">
   <a href="#silent_oz" class="md-nav__link">
     silent_oz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google_sheet_export" class="md-nav__link">
+    google_sheet_export
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sheet_ids" class="md-nav__link">
+    sheet_ids
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sheet_names" class="md-nav__link">
+    sheet_names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezone" class="md-nav__link">
+    timezone
   </a>
   
 </li>
@@ -515,14 +585,42 @@
 
 
 <h1 id="config-options">Config Options<a class="headerlink" href="#config-options" title="Permanent link">&para;</a></h1>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<p>Most configuration for the bot is done in the <code>config.yml</code> file. This is written in YAML format which is made to be very readable. The config file includes helpful explanations within to supplement the information on this page. While you can technically edit it in any text editor, it's more sane to use one designed for code like <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a> for Windows that will make the whole experience nicer.</p>
+<p>When editing the file, your goal should be to <em>follow the pattern</em>. Extra spaces, tabs, and punctuation will likely cause the bot to give an error. In general, never change the text to the left of a colon, as this is the name of a variable the bot is looking for. The exception to this is when you are adding entirely new lines, such as for <code>database_tables</code>. </p>
+<p>Don't make the name of something just a number. It might technically work, but you're risking the bot mis-interpreting. So don't be cheeky and name your Google Sheet for tags <code>69</code>. Likewise, other clever names with odd characters are just not good form. Let text be text here.</p>
 <h3 id="registration"><code>registration</code><a class="headerlink" href="#registration" title="Permanent link">&para;</a></h3>
 <p>When <code>true</code>, the registration button will launch the chatbot. When <code>false</code>, it will not, and so closes registration.</p>
 <h3 id="tag_logging"><code>tag_logging</code><a class="headerlink" href="#tag_logging" title="Permanent link">&para;</a></h3>
 <p>When <code>true</code>, the tag_log button will launch the chatbot. When <code>false</code>, it will not, and so closes tag logging.</p>
 <h3 id="silent_oz"><code>silent_oz</code><a class="headerlink" href="#silent_oz" title="Permanent link">&para;</a></h3>
 <p>When <code>true</code>, the identity of an <a href="../commands/#oz">OZ</a> is not included in tag announcements. This lets you keep who the OZs are a mystery until players see them in the real world. You will likely want to turn this <code>False</code> once the OZs are commonly known.</p>
+<h3 id="google_sheet_export"><code>google_sheet_export</code><a class="headerlink" href="#google_sheet_export" title="Permanent link">&para;</a></h3>
+<p>When <code>true</code>, any changes to the database will be pushed out to the Google Sheet. The bot is designed to use the Google Sheet, so it is not recommended to go without it. If you are having trouble with the Google Sheet and you just need the bot to work, set this to <code>false</code>. As a backup, you can still read the database with an editor such as <a href="https://sqlitebrowser.org/">DB Browser for SQLite</a>.</p>
+<h3 id="sheet_ids"><code>sheet_ids</code><a class="headerlink" href="#sheet_ids" title="Permanent link">&para;</a></h3>
+<h3 id="sheet_names"><code>sheet_names</code><a class="headerlink" href="#sheet_names" title="Permanent link">&para;</a></h3>
+<p>These are the names of the sheets within the Google Sheets document that data will be sent to. The variables here match the names of the tables in the database.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">sheet_names</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">members</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Players_Live</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tags Live</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="timezone"><code>timezone</code><a class="headerlink" href="#timezone" title="Permanent link">&para;</a></h3>
+<p>A number representing the timezone the game is occuring in, as an offset from UTC. -7 is US West Coast, -5 is US Central, -4 is US East Coast, Central Europe is +2</p>
+<p>With this, the bot could run in a different timezone than the game is played in and still report accurate times.</p>
 <h2 id="channel_names"><code>channel_names</code><a class="headerlink" href="#channel_names" title="Permanent link">&para;</a></h2>
 <p>These settings map specific channels the bot needs to the actual channel names on the server. If these channels aren't specified, the bot will search for the channels that match the names below. The bot will fail to start if it doesn't find a channel.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">channel_names</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">tag-announcements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zombie-kills</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">report-tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report-tags-here</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">zombie-chat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zombie-lair</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">bot-output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bot-output</span><span class="w"></span>
+</code></pre></div>
+</div>
 <h4 id="tag-announcements"><code>tag-announcements</code><a class="headerlink" href="#tag-announcements" title="Permanent link">&para;</a></h4>
 <p>The channel where tags are announced. It is recommended that all players can view this, but only admins and the bot can post.</p>
 <h4 id="report-tags"><code>report-tags</code><a class="headerlink" href="#report-tags" title="Permanent link">&para;</a></h4>
@@ -533,6 +631,14 @@
 <p>The channel the bot can use to output system messages to. Should only be visible to admins, and should be muted.</p>
 <h2 id="role_names"><code>role_names</code><a class="headerlink" href="#role_names" title="Permanent link">&para;</a></h2>
 <p>These settings map specific roles the bot needs to the actual role names on the guild. If these roles aren't specified, the bot will search for the roles that match the names below. The bot will fail to start if it doesn't find a role.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">role_names</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">zombie</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Brain Eater</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">human</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Brain-Box</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">player</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Player</span><span class="w"></span>
+</code></pre></div>
+</div>
 <h4 id="zombie"><code>zombie</code><a class="headerlink" href="#zombie" title="Permanent link">&para;</a></h4>
 <p>Tagged players will get this role and should have access to click the tag logging button.</p>
 <h4 id="human"><code>human</code><a class="headerlink" href="#human" title="Permanent link">&para;</a></h4>
@@ -548,11 +654,6 @@
             
           </div>
         </div>
-        
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-            Back to top
-          </a>
         
       </main>
       
@@ -600,7 +701,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
