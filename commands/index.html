@@ -667,6 +667,7 @@
 <p><code>/post_button [text] [button_1] [button_2] ... [button_5]</code></p>
 <p>Sends a message in this channel that contains one or multiple buttons that will start one of the chatbots. It will also contain text if you choose.
 There is no limit to the number of the same button that can exist in a guild, and they can be deleted at any time.</p>
+<p>By default, the bot comes with two chatbot buttons: registration and tag_logging.</p>
 <h3 id="post_panel">post_panel<a class="headerlink" href="#post_panel" title="Permanent link">&para;</a></h3>
 <p><code>/post_panel &lt;element1&gt; [element 2] ... [element 6] [static]</code></p>
 <p>A <em>panel</em> is a special message with attached game information, each of which is called an <em>element</em>. A panel can have multiple elements, such as the number of humans, number of zombies, players registered today, etc. There's a special element called <code>GamePlotElement</code> which displays a plot of human and zombie populations over the course of the game.</p>
@@ -741,6 +742,11 @@ There is no limit to the number of the same button that can exist in a guild, an
           </div>
         </div>
         
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
       </main>
       
         <footer class="md-footer">
@@ -802,7 +808,7 @@ There is no limit to the number of the same button that can exist in a guild, an
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
