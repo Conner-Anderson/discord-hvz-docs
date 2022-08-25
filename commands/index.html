@@ -377,6 +377,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tag-delete" class="md-nav__link">
+    tag delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-revoke" class="md-nav__link">
+    tag revoke
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-restore" class="md-nav__link">
+    tag restore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-edit" class="md-nav__link">
+    tag edit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-tree" class="md-nav__link">
+    tag tree
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -549,6 +584,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tag-delete" class="md-nav__link">
+    tag delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-revoke" class="md-nav__link">
+    tag revoke
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-restore" class="md-nav__link">
+    tag restore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-edit" class="md-nav__link">
+    tag edit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-tree" class="md-nav__link">
+    tag tree
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -603,7 +673,7 @@ There is no limit to the number of the same button that can exist in a guild, an
 <p>The <code>static</code> option is by default <code>false</code>, which means the panel will keep its values up to date with the current game. If <code>true</code>, it will never change.</p>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
-<p>The <code>GamePlotElement</code> is a complex and really cool graph that has some issues right now. Check first to see if it works before showing players.</p>
+<p>The <code>GamePlotElement</code> is a complex and really cool plot that has some issues right now. Check first to see if it works before showing players.</p>
 </div>
 <h3 id="shutdown">shutdown<a class="headerlink" href="#shutdown" title="Permanent link">&para;</a></h3>
 <p><code>/shutdown [force]</code></p>
@@ -635,6 +705,32 @@ There is no limit to the number of the same button that can exist in a guild, an
 <h3 id="tag-create">tag create<a class="headerlink" href="#tag-create" title="Permanent link">&para;</a></h3>
 <p><code>/tag create &lt;member&gt;</code></p>
 <p>Starts a tag logging chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will actually make the tag. Helpful if the chatbot is acting up for someone, or if they just can't get to a device.</p>
+<h3 id="tag-delete">tag delete<a class="headerlink" href="#tag-delete" title="Permanent link">&para;</a></h3>
+<p><code>/tag delete &lt;tag_id&gt;</code></p>
+<p>Deletes a tag log by its <code>tag_id</code>, as viewable on the Google Sheet. If the target of the deleted tag has no more tags against them, they are reverted to human. Remember, if you don't like this functionality, you can always swap their roles back via Discord.</p>
+<h3 id="tag-revoke">tag revoke<a class="headerlink" href="#tag-revoke" title="Permanent link">&para;</a></h3>
+<p><code>/tag revoke &lt;tag_id&gt;</code></p>
+<p>Identical in behavior to <code>tag delete</code>, except instead of removing the tag, it is labeled as <em>revoked</em>. Statistics reporters such as <code>tag tree</code> will ignore the tag, and so can you when reading the Google Sheet. </p>
+<p>This is a more elegant way to remove a tag during a questionable dispute.</p>
+<h3 id="tag-restore">tag restore<a class="headerlink" href="#tag-restore" title="Permanent link">&para;</a></h3>
+<p><code>/tag restore &lt;tag_id&gt;</code></p>
+<p>Restores a tag that has been revoked. Turns the tagged member back into a zombie. </p>
+<h3 id="tag-edit">tag edit<a class="headerlink" href="#tag-edit" title="Permanent link">&para;</a></h3>
+<p><code>/tag edit &lt;member&gt; &lt;attribute&gt; &lt;value&gt;</code></p>
+<p>An advanced command to directly edit a tag in the database. You should consult the Google Sheet before using this.</p>
+<p><code>attribute</code> must exactly match the database column to change, as seen on the Google Sheet.</p>
+<p><code>value</code> is the new value. The command does not check if this is a valid value!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This command does not yet support changing dates. It might work... but it might not. Use a database editor like <a href="https://sqlitebrowser.org/">DB Browser for SQLite</a> to change dates until this feature is added.</p>
+</div>
+<h3 id="tag-tree">tag tree<a class="headerlink" href="#tag-tree" title="Permanent link">&para;</a></h3>
+<p><code>/tag tree</code></p>
+<p>Trust me, this is your players' favorite command. It will post a geneology of zombies, showing who tagged whom. If the message overflows the 2000 character limit for messages, the message paginate with buttons to navigate the pages.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the pagination feature is needed, the pages will not be navigable after the bot restarts. This is a potential thing to fix in the future.</p>
+</div>
 
 
 
