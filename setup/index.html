@@ -393,11 +393,11 @@
 <h1 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h1>
 <h2 id="server-setup">Server Setup<a class="headerlink" href="#server-setup" title="Permanent link">&para;</a></h2>
 <h3 id="channels">Channels<a class="headerlink" href="#channels" title="Permanent link">&para;</a></h3>
-<p>Your Discord server must have the <code>channels names</code> section configured in <code>config.yml</code> to function. Please see <a href="../config_options/#channel_names">Config Options: channel_names</a> for information. You can change these channels later, but <strong>the bot must have permission to view and post in these channels.</strong></p>
+<p>Your Discord server must have the <code>channel_names</code> section configured in <code>config.yml</code> to function. Please see <a href="../config_options/#channel_names">Config Options: channel_names</a> for information. You can change these channels later, but <strong>the bot must have permission to view and post in these channels.</strong></p>
 <p>To play the game, server members need a way to click the registration button, and zombies need a way to click the tag logging button. Let's create those now. </p>
 <p>Go the channel you want the registration button in. It is recommended that this channel be one dedicated to information about the game. 
 Send the command <a href="../commands/#post_button"><code>/post_button</code></a> and selection "registration" as the <code>button_1</code> option. </p>
-<p>If you're unfamiliar with Discord Slash Commands, look here: </p>
+<p>If you're unfamiliar with Discord Slash Commands, look here: <a href="../commands/#overview">Commands Overview</a></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>If you don't like where the registration button sits in the channel, you can always delete it and try again later. The buttons are quite forgiving.</p>
@@ -409,7 +409,7 @@ Send the command <a href="../commands/#post_button"><code>/post_button</code></a
 <p>Your Discord server must have the <code>roles</code> section configured as well. See <a href="../config_options/#role_names">Config Options: role_names</a> for information.
 Ensure you have a role for each faction, and one for all players. <strong>The bot must have permission to manage these roles</strong>, meaning they have to be lower than it in the role hierarchy. </p>
 <h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h3>
-<p>Discord lets you manage command permissions through <code>Server Settings / Integrations / [Your Bot]</code>. Here you can give permissions to certain users and roles to use categories of commands. <strong>By default, everyone can use everything.</strong> That's bad, so restrict most commands to only your admins. The <code>/code</code> command is designed to be used by players though.</p>
+<p>Discord lets you manage command permissions through <code>Server Settings / Integrations / [Your Bot]</code>. Here you can give permissions to certain members and roles to use categories of commands. <strong>By default, everyone can use everything.</strong> That's bad, so restrict most commands to only your admins. The <code>/code</code> command is designed to be used by players though.</p>
 
 
 

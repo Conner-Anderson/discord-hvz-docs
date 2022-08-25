@@ -330,29 +330,49 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#member_list" class="md-nav__link">
-    member_list
+  <a href="#member-list" class="md-nav__link">
+    member list
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#member_register" class="md-nav__link">
-    member_register
+  <a href="#member-register" class="md-nav__link">
+    member register
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#member_delete" class="md-nav__link">
-    member_delete
+  <a href="#member-delete" class="md-nav__link">
+    member delete
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#member_edit" class="md-nav__link">
-    member_edit
+  <a href="#member-edit" class="md-nav__link">
+    member edit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag-commands" class="md-nav__link">
+    Tag Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Tag Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tag-create" class="md-nav__link">
+    tag create
   </a>
   
 </li>
@@ -482,29 +502,49 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#member_list" class="md-nav__link">
-    member_list
+  <a href="#member-list" class="md-nav__link">
+    member list
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#member_register" class="md-nav__link">
-    member_register
+  <a href="#member-register" class="md-nav__link">
+    member register
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#member_delete" class="md-nav__link">
-    member_delete
+  <a href="#member-delete" class="md-nav__link">
+    member delete
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#member_edit" class="md-nav__link">
-    member_edit
+  <a href="#member-edit" class="md-nav__link">
+    member edit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag-commands" class="md-nav__link">
+    Tag Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Tag Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tag-create" class="md-nav__link">
+    tag create
   </a>
   
 </li>
@@ -541,6 +581,7 @@
 <h2 id="standalone-commands">Standalone Commands<a class="headerlink" href="#standalone-commands" title="Permanent link">&para;</a></h2>
 <h3 id="code">code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
 <p><code>/code</code></p>
+<p>Replies to a player with their own tag code in an "ephemeral" message only they can see, in case they lose it. This tag code is needed for zombies to log their tag.</p>
 <h3 id="config">config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h3>
 <p><code>/config &lt;setting&gt; [choice]</code></p>
 <p>Manipulates certain important configuration settings. Displays the current setting if no <code>choice</code> is given, and changes the setting if it is.
@@ -557,25 +598,31 @@
 <p>Sends a message in this channel that contains one or multiple buttons that will start one of the chatbots. It will also contain text if you choose.
 There is no limit to the number of the same button that can exist in a guild, and they can be deleted at any time.</p>
 <h3 id="post_panel">post_panel<a class="headerlink" href="#post_panel" title="Permanent link">&para;</a></h3>
-<p><code>/post_panel</code></p>
+<p><code>/post_panel &lt;element1&gt; [element 2] ... [element 6] [static]</code></p>
+<p>A <em>panel</em> is a special message with attached game information, each of which is called an <em>element</em>. A panel can have multiple elements, such as the number of humans, number of zombies, players registered today, etc. There's a special element called <code>GamePlotElement</code> which displays a plot of human and zombie populations over the course of the game.</p>
+<p>The <code>static</code> option is by default <code>false</code>, which means the panel will keep its values up to date with the current game. If <code>true</code>, it will never change.</p>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>The <code>GamePlotElement</code> is a complex and really cool graph that has some issues right now. Check first to see if it works before showing players.</p>
+</div>
 <h3 id="shutdown">shutdown<a class="headerlink" href="#shutdown" title="Permanent link">&para;</a></h3>
 <p><code>/shutdown [force]</code></p>
 <p>Shuts down the bot, which must be restarted from the computer it is running on. If there are any chatbots running, they will be listed, and the bot will not shutdown. If <code>force</code> is supplied as <code>true</code>, the bot will shut down anyways, closing any chatbots. The members using those chatbots will be notified, and will need to start over.</p>
 <h2 id="member-commands">Member Commands<a class="headerlink" href="#member-commands" title="Permanent link">&para;</a></h2>
-<h3 id="member_list">member_list<a class="headerlink" href="#member_list" title="Permanent link">&para;</a></h3>
+<h3 id="member-list">member list<a class="headerlink" href="#member-list" title="Permanent link">&para;</a></h3>
 <p><code>/member list</code></p>
 <p>Lists all members. Generally, looking at the Google Sheet is a better option.</p>
-<h3 id="member_register">member_register<a class="headerlink" href="#member_register" title="Permanent link">&para;</a></h3>
+<h3 id="member-register">member register<a class="headerlink" href="#member-register" title="Permanent link">&para;</a></h3>
 <p><code>/member register &lt;member&gt;</code></p>
 <p>Starts a registration chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will be actually registered. Helpful if the chatbot is acting up for someone, or they were accidentally deleted from the game.</p>
-<h3 id="member_delete">member_delete<a class="headerlink" href="#member_delete" title="Permanent link">&para;</a></h3>
+<h3 id="member-delete">member delete<a class="headerlink" href="#member-delete" title="Permanent link">&para;</a></h3>
 <p><code>/member delete &lt;member&gt;</code></p>
 <p>Removes the selected member from the game. They remain on the server and in tag records, but are removed from as a member from the database and have their game roles revoked. Will probably mess up some game statistics...</p>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
 <p>Cannot currently delete members no longer on the server.</p>
 </div>
-<h3 id="member_edit">member_edit<a class="headerlink" href="#member_edit" title="Permanent link">&para;</a></h3>
+<h3 id="member-edit">member edit<a class="headerlink" href="#member-edit" title="Permanent link">&para;</a></h3>
 <p><code>/member edit &lt;member&gt; &lt;attribute&gt; &lt;value&gt;</code></p>
 <p>An advanced command to directly edit a member in the database. You should consult the Google Sheet before using this.</p>
 <p><code>attribute</code> must exactly match the database column to change, as seen on the Google Sheet.</p>
@@ -584,6 +631,10 @@ There is no limit to the number of the same button that can exist in a guild, an
 <p class="admonition-title">Warning</p>
 <p>This command does not yet support changing dates. It might work... but it might not. Use a database editor like <a href="https://sqlitebrowser.org/">DB Browser for SQLite</a> to change dates until this feature is added.</p>
 </div>
+<h2 id="tag-commands">Tag Commands<a class="headerlink" href="#tag-commands" title="Permanent link">&para;</a></h2>
+<h3 id="tag-create">tag create<a class="headerlink" href="#tag-create" title="Permanent link">&para;</a></h3>
+<p><code>/tag create &lt;member&gt;</code></p>
+<p>Starts a tag logging chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will actually make the tag. Helpful if the chatbot is acting up for someone, or if they just can't get to a device.</p>
 
 
 
