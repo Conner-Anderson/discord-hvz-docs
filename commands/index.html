@@ -195,10 +195,59 @@
   
   
   
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../setup/" class="md-nav__link">
         Setup
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customized_chatbots/" class="md-nav__link">
+        Customized Chatbots
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -417,6 +466,68 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#item-commands" class="md-nav__link">
+    Item Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Item Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#item-create" class="md-nav__link">
+    item create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-list" class="md-nav__link">
+    item list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-transfer" class="md-nav__link">
+    item transfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-take" class="md-nav__link">
+    item take
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-rename" class="md-nav__link">
+    item rename
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-delete" class="md-nav__link">
+    item delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-delete_all" class="md-nav__link">
+    item delete_all
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -624,6 +735,68 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#item-commands" class="md-nav__link">
+    Item Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Item Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#item-create" class="md-nav__link">
+    item create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-list" class="md-nav__link">
+    item list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-transfer" class="md-nav__link">
+    item transfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-take" class="md-nav__link">
+    item take
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-rename" class="md-nav__link">
+    item rename
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-delete" class="md-nav__link">
+    item delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-delete_all" class="md-nav__link">
+    item delete_all
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -732,6 +905,32 @@ There is no limit to the number of the same button that can exist in a guild, an
 <p class="admonition-title">Warning</p>
 <p>If the pagination feature is needed, the pages will not be navigable after the bot restarts. This is a potential thing to fix in the future.</p>
 </div>
+<h2 id="item-commands">Item Commands<a class="headerlink" href="#item-commands" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info<p>The item tracking system is new and quite basic right now. Consider it in beta.</p>
+</p>
+</div>
+<h3 id="item-create">item create<a class="headerlink" href="#item-create" title="Permanent link">&para;</a></h3>
+<p><code>/item create &lt;name&gt; [starting_player]</code></p>
+<p>Creates an item with the specified name. This name can be anything you like. By default, this item is placed into "storage", which means it isn't assigned to anyone. You can provide a <code>starting player</code> to give it to immediately.</p>
+<h3 id="item-list">item list<a class="headerlink" href="#item-list" title="Permanent link">&para;</a></h3>
+<p><code>/item list [member]</code></p>
+<p>Lists all items in the game, their ids, and their owners. If you provide <code>member</code>, it will show only the items owned by that member.</p>
+<h3 id="item-transfer">item transfer<a class="headerlink" href="#item-transfer" title="Permanent link">&para;</a></h3>
+<p><code>/item transfer &lt;id&gt; &lt;target_player&gt;</code></p>
+<p>Transfers an item to a player, regardless of who currently owns it. Use <code>item list</code> to find the right id.</p>
+<h3 id="item-take">item take<a class="headerlink" href="#item-take" title="Permanent link">&para;</a></h3>
+<p><code>/item take &lt;id&gt;</code></p>
+<p>Moves an item from a player to storage.</p>
+<h3 id="item-rename">item rename<a class="headerlink" href="#item-rename" title="Permanent link">&para;</a></h3>
+<p><code>/item rename &lt;id&gt; &lt;new_name&gt;</code></p>
+<p>Renames an item.</p>
+<h3 id="item-delete">item delete<a class="headerlink" href="#item-delete" title="Permanent link">&para;</a></h3>
+<p><code>/item delete &lt;id&gt;</code></p>
+<p>Deletes an item. There is no undo.</p>
+<h3 id="item-delete_all">item delete_all<a class="headerlink" href="#item-delete_all" title="Permanent link">&para;</a></h3>
+<p><code>/item delete_all &lt;are_you_sure&gt;</code></p>
+<p>Completely deletes all items. There is no undo!</p>
 
 
 
