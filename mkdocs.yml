@@ -2,10 +2,13 @@ site_name: Discord-HVZ Docs
 
 nav:
   - Home: index.md
-  - Setup: setup.md
+  - Getting Started:
+    - Setup: setup.md
+    - Customized Chatbots: customized_chatbots.md
   - Running the Game: running_the_game.md
   - Commands: commands.md
   - Config Options: config_options.md
+  
 
 theme:
   name: material
@@ -30,3 +33,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
