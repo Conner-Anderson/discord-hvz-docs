@@ -55,7 +55,6 @@ These settings map specific channels the bot needs to the actual channel names o
 		tag-announcements: zombie-kills
 		report-tags: report-tags-here
 		zombie-chat: zombie-lair
-		bot-output: bot-output
 	```
 
 #### `tag-announcements` 
@@ -64,12 +63,11 @@ The channel where tags are announced. It is recommended that all players can vie
 A channel that the tag logging button is posted in. Only zombies should have permission to view this. The bot needs to know about this channel so it can secretly give the OZs access to it.
 #### `zombie-chat`
 A channel zombies can use to talk to each other in, which only they have access to. The bot needs to know about this channel so it can secretly give the OZs access to it.
-#### `bot-output`
-The channel the bot can use to output system messages to. Should only be visible to admins, and should be muted.
+
 
 ### `role_names`
 
-These settings map specific roles the bot needs to the actual role names on the guild. If these roles aren't specified, the bot will search for the roles that match the names below. The bot will fail to start if it doesn't find a role.
+These settings map specific roles the bot needs to the actual role names on the server. If these roles aren't specified, the bot will search for the roles that match the names below. The bot will fail to start if it doesn't find a role.
 
 !!! example
 	``` yaml

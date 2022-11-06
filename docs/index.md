@@ -1,7 +1,9 @@
 
+![Hero](img/hero4.webp)
+
 # Documentation for Discord-HVZ
 
-Discord-HVZ is a run-it-yourself Discord bot that helps run **Humans vs. Zombies** games. This documentation contains everything you need to manage an HVZ game with the help of [Discord](https://humansvszombies.org/).
+Discord-HVZ is a run-it-yourself Discord bot that helps run **Humans vs. Zombies** games. This documentation contains everything you need to manage an HVZ game with the help of [Discord](https://discord.com/).
 
 For information about HvZ: [humansvszombies.org](https://humansvszombies.org/)
 
@@ -19,7 +21,7 @@ This bot was developed to run HvZ games at LeTourneau University in Texas, but i
 - Includes many commands for managing the game
 - Includes configuration options and customizable questionnaires
 - Works on existing Discord servers without disrupting non-players
-- Works on Windows, Linux, and Mac, though the docs are written for Windows
+- Works on :material-microsoft-windows: Windows and :material-linux: Linux, with :material-apple: Mac coming soon.
 - Written in Python, potentially aiding personalization
 
 ### Prerequisites
@@ -28,14 +30,14 @@ This bot was developed to run HvZ games at LeTourneau University in Texas, but i
 - Mild tech-saviness. You must have dabbled in coding at some point, are not afraid of a command-prompt, and are willing to read a few StackOverflow pages if things don't go quite right.
 - A Discord account that owns the server you want to run the bot on. You could also just get the owner to do a few setup steps for you.
 - A Google account to access the Google Sheet and the Sheets API.
-- A computer with an internet connection that can run the bot for the entire game. For example, you may leave your desktop on, borrow someone's old laptop, or use a Raspberry Pi in the closet. This documentation is written for a Windows PC, but with a little translation, should work fine for Linux or Mac.
+- A computer with an internet connection that can run the bot for the entire game. For example, you may leave your desktop on, borrow someone's old laptop, or use a Raspberry Pi in the closet. 
 
 This software is for HvZ admin teams willing to do a bit of legwork to set it up, giving you an HvZ system entirely under your control.
 
 ## Get Started
 
 
-[Setup](setup.md){ .md-button } &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Start from scratch in getting the bot running.
+[Installation](installation.md){ .md-button } &emsp; &emsp; &emsp; &emsp; Start from scratch in getting the bot running.
 
 [Running the Game](running_the_game.md){ .md-button } &emsp; Learn the process of running a game with Discord-HvZ.
 

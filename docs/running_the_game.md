@@ -1,3 +1,5 @@
+![Hero](img/hero6.webp)
+
 # Running the Game
 
 ## Core Concepts

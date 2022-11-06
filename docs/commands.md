@@ -1,4 +1,4 @@
-# Commands
+# Commands :material-slash-forward:
 
 ## Overview
 
@@ -60,8 +60,8 @@ A *panel* is a special message with attached game information, each of which is 
 
 The `static` option is by default `false`, which means the panel will keep its values up to date with the current game. If `true`, it will never change.
 
-!!! bug
-    The `GamePlotElement` is a complex and really cool plot that has some issues right now. Check first to see if it works before showing players.
+!!! warning
+    The `GamePlotElement` is a really cool, but complex feature. Check first to see if it works before showing players. 
 
 ### shutdown
 `/shutdown [force]`

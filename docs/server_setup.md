@@ -1,19 +1,20 @@
-# Setup
+# Server Setup
 
+!!! info "Prerequisite"
+        These steps depend on a working bot after successful [installation](../installation).
 
+This bot is managed with Slash Commands. If you're unfamiliar with Discord Slash Commands, look here: [Slash Commands Overview](../commands/#overview)  
+Remember, you can't use a command in a channel the bot can't read and send messages in.
 
-## Server Setup
+### Buttons
 
-### Channels
-
-Your Discord server must have the `channel_names` section configured in `config.yml` to function. Please see [Config Options: channel_names](../config_options/#channel_names) for information. You can change these channels later, but **the bot must have permission to view and post in these channels.**
 
 To play the game, server members need a way to click the registration button, and zombies need a way to click the tag logging button. Let's create those now. 
 
 Go the channel you want the registration button in. It is recommended that this channel be one dedicated to information about the game. 
 Send the command [`/post_button`](../commands/#post_button) and selection "registration" as the `button_1` option. 
 
-If you're unfamiliar with Discord Slash Commands, look here: [Commands Overview](../commands/#overview)
+
 
 !!! info
 
@@ -23,14 +24,13 @@ Do the same for the `tag_logging` button in the same channel you configured as t
 
 It is also recommended that you create a channel purely for sending the bot commands, and leave it muted. No need to clutter up other channels with that. Remember to give the bot access to it.
 
-**Setup admin roles**
-
-### Roles
-
-Your Discord server must have the `roles` section configured as well. See [Config Options: role_names](../config_options/#role_names) for information.
-Ensure you have a role for each faction, and one for all players. **The bot must have permission to manage these roles**, meaning they have to be lower than it in the role hierarchy. 
 
 ### Commands
 
 Discord lets you manage command permissions through `Server Settings / Integrations / [Your Bot]`. Here you can give permissions to certain members and roles to use categories of commands. **By default, everyone can use everything.** That's bad, so restrict most commands to only your admins. The `/code` command is designed to be used by players though.
 
+Currently, commands are sorted into groups: `member`, `tag`, etc. Discord doesn't let you vary permissions between commands within a group. This way of organizing commands may change, especially if people complain about it.
+
+!!! question "Next Steps"
+        At this point in the setup process, it is probably a good idea to read the [Running the Game](../running_the_game) guide and do a test game with some of your team. Register some users, set some OZs, and start tagging! This'll help you really understand how the system works and what you'd like to tweak.  
+        When you're ready, take a look at [Customized Chatbots](../customized_chatbots) to put on the final touches!
