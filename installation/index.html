@@ -812,7 +812,7 @@ The bot should run, then close with an error because there are still setup steps
 <p>The interfaces on the following Google pages are big and complicated. Take your time and look carefully.</p>
 <ol>
 <li>Go <a href="https://console.cloud.google.com/projectcreate" target="_blank">here</a> to make a Google Cloud Platform project. The <strong>Location</strong> field is not important.</li>
-<li>Use the navigation menu <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg></span> in the top left and go to <strong>APIs &amp; Services</strong> then <strong>Library</strong>. Search for "Google Sheets" and <strong>Enable</strong> this API.</li>
+<li>Use the navigation menu <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg></span> in the top left and go to <strong>APIs &amp; Services</strong> then <strong>Library</strong>. Search for "Google Sheets" and <strong>Enable</strong> the Google Sheets API.</li>
 <li>Go back to <strong>APIs &amp; Services</strong>, but this time to the <strong>OAuth consent screen</strong> page. Follow the instructions there to set up a consent screen, only filling in the required information and skipping everything else.</li>
 <li>Go to the <strong>Credentials</strong> tab of the <strong>APIs &amp; Services</strong> section and use the <strong>Create Credentials</strong> button to make an <strong>OAuth client ID</strong>. Again, the information you put in here isn't critical.</li>
 <li>When done, you'll get the option to <strong>DOWNLOAD JSON</strong>. Look around for a <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg></span> icon and download the file to your installation of Discord HvZ.</li>
@@ -820,9 +820,14 @@ The bot should run, then close with an error because there are still setup steps
 <li>Go to <a href="https://drive.google.com/">Google Drive</a> and create a Sheets document which will be used to display members and tags to your admin or moderator team during the game. Set up its location and permissions appropriately for that purpose.</li>
 <li>Add two sheets to this document: one called "Members" and the other called "Tags". If you want to change these names, see the <a href="../config_options/#sheet_names">sheet_names</a> config option.</li>
 <li>Copy the sheet ID from the URL in your address bar. It is the code highlighted here: <img alt="Sheet ID" src="../img/sheet_id.png" /></li>
-<li>In <code>config.yml</code>, find the <code>available_servers</code> section and paste the ID over the one labeled <code>live</code>. Now your bot knows what sheet to send data to.</li>
+<li>In <code>config.yml</code>, find the <code>sheet_ids</code> section section and paste the ID over the one labeled <code>live</code>. Now your bot knows what sheet to send data to.</li>
 <li>The first time you launch the bot, it will open a browser window and ask you to log in with a Google Account. The only requirements for this account are that it has access to the bot's Google Sheet: it could be a personal account, or one created only for this purpose.</li>
 </ol>
+<div class="admonition bug">
+<p class="admonition-title">Bug<p>The Google login for Sheets will expire after a few days, even when running. That isn't supposed to happen unless the bot is offline for days.<br />
+In the meantime, reboot the bot daily to stay logged in.</p>
+</p>
+</div>
 <h2 id="final-steps">Final Steps<a class="headerlink" href="#final-steps" title="Permanent link">&para;</a></h2>
 <p>Configure the <code>channel_names</code> section in <code>config.yml</code>. Please see <a href="../config_options/#channel_names">Config Options: channel_names</a> for information. You can change these channels later, but <strong>the bot must have permission to view and post in these channels.</strong></p>
 <p>Configure the <code>roles</code> section configured as well. See <a href="../config_options/#role_names">Config Options: role_names</a> for information.
