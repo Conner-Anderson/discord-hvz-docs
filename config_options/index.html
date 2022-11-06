@@ -411,6 +411,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#server_id" class="md-nav__link">
+    server_id
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sheet_id" class="md-nav__link">
+    sheet_id
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#registration" class="md-nav__link">
     registration
   </a>
@@ -434,13 +448,6 @@
         <li class="md-nav__item">
   <a href="#google_sheet_export" class="md-nav__link">
     google_sheet_export
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sheet_ids" class="md-nav__link">
-    sheet_ids
   </a>
   
 </li>
@@ -583,6 +590,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#server_id" class="md-nav__link">
+    server_id
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sheet_id" class="md-nav__link">
+    sheet_id
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#registration" class="md-nav__link">
     registration
   </a>
@@ -606,13 +627,6 @@
         <li class="md-nav__item">
   <a href="#google_sheet_export" class="md-nav__link">
     google_sheet_export
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sheet_ids" class="md-nav__link">
-    sheet_ids
   </a>
   
 </li>
@@ -726,6 +740,10 @@
 <p>Most configuration for the bot is done in the <code>config.yml</code> file. This is written in YAML format which is made to be very readable. The config file includes helpful explanations within to supplement the information on this page. While you can technically edit it in any text editor, it's more sane to use one designed for code like <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a> for Windows that will make the whole experience nicer.</p>
 <p>When editing the file, your goal should be to <em>follow the pattern</em>. Extra spaces, tabs, and punctuation will likely cause the bot to give an error. In general, never change the text to the left of a colon, as this is the name of a variable the bot is looking for. The exception to this is when you are adding entirely new lines, such as for <code>database_tables</code>. </p>
 <p>Don't make the name of something just a number. It might technically work, but you're risking the bot mis-interpreting. So don't be cheeky and name your Google Sheet for tags <code>69</code>. Likewise, other clever names with odd characters are just not good form. Let text be text here.</p>
+<h3 id="server_id"><code>server_id</code><a class="headerlink" href="#server_id" title="Permanent link">&para;</a></h3>
+<p>The ID of the Discord server to connect to. This can be found at the <a href="https://discord.com/developers/applications" target="_blank">Discord Developer Portal</a> under General Information for your application.</p>
+<h3 id="sheet_id"><code>sheet_id</code><a class="headerlink" href="#sheet_id" title="Permanent link">&para;</a></h3>
+<p>The ID of the Google Sheet the bot will send its data to. See <a href="../installation/#setting-up-google-sheets">Setting Up Google Sheets</a> for more information.</p>
 <h3 id="registration"><code>registration</code><a class="headerlink" href="#registration" title="Permanent link">&para;</a></h3>
 <p>When <code>true</code>, the registration button will launch the chatbot. When <code>false</code>, it will not, and so closes registration.</p>
 <h3 id="tag_logging"><code>tag_logging</code><a class="headerlink" href="#tag_logging" title="Permanent link">&para;</a></h3>
@@ -734,7 +752,6 @@
 <p>When <code>true</code>, the identity of an <a href="../commands/#oz">OZ</a> is not included in tag announcements. This lets you keep who the OZs are a mystery until players see them in the real world. You will likely want to turn this <code>False</code> once the OZs are commonly known.</p>
 <h3 id="google_sheet_export"><code>google_sheet_export</code><a class="headerlink" href="#google_sheet_export" title="Permanent link">&para;</a></h3>
 <p>When <code>true</code>, any changes to the database will be pushed out to the Google Sheet. The bot is designed to use the Google Sheet, so it is not recommended to go without it. If you are having trouble with the Google Sheet and you just need the bot to work, set this to <code>false</code>. As a backup, you can still read the database with an editor such as <a href="https://sqlitebrowser.org/">DB Browser for SQLite</a>.</p>
-<h3 id="sheet_ids"><code>sheet_ids</code><a class="headerlink" href="#sheet_ids" title="Permanent link">&para;</a></h3>
 <h3 id="sheet_names"><code>sheet_names</code><a class="headerlink" href="#sheet_names" title="Permanent link">&para;</a></h3>
 <p>These are the names of the sheets within the Google Sheets document that data will be sent to. The variables here match the names of the tables in the database.</p>
 <div class="admonition example">
