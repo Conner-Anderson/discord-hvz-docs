@@ -723,7 +723,7 @@ If you're assisting with development, use this instead:
 </code></pre></div></p>
 </li>
 <li>
-<p>Copy the <code>.env</code> file from the <code>default_data_files</code> folder to the top directory of the project. You'll need it in the next section.</p>
+<p>If there's no <code>.env</code> file in the top directory, copy it from the <code>default_data_files</code> folder to the top directory of the project. You'll need it in the next section. You may need to show hidden files to do this.</p>
 </li>
 <li>
 <p>Run the bot:
@@ -793,7 +793,7 @@ The bot should run, then close with an error because there are still setup steps
 <li>Go to the <strong>Applications</strong> page and create a new application. The name you select here <em>is not</em> the name of the bot. This "application" is more like a set of credentials that the bot will use.</li>
 <li>Go to the <strong>Bot</strong> tab of your new Application and click <strong>Add Bot</strong>. Give it the username it will have on your server. Make sure the <strong>Public Bot</strong> switch is <em>off</em>. This bot should be private.</li>
 <li>Turn on all <strong>Privileged Gateway Intents</strong>. </li>
-<li>Use the <strong>Copy</strong> button on this page to copy the bot token to your clipboard. This is a secret code that let's your bot identify itself to Discord. If someone else gets this token, they can impersonate your bot: never share it.</li>
+<li>Use the <strong>Copy</strong> button on this page to copy the bot token to your clipboard. This is a secret code that lets your bot identify itself to Discord. If someone else gets this token, they can impersonate your bot: never share it.</li>
 <li>Go to your installation of Discord HvZ and open the <code>.env</code> file in a text editor. Your OS may hide files that start with a <code>.</code>, so you may need to show hidden items through the <strong>View</strong> menu of your file browser.</li>
 <li>Paste your token between the quotes and save the file. The file should then look something like this: <code>TOKEN='123ABC789a456g6_ad45.816d_d454wd'</code> Your bot now has permission to use the account Discord gives it.</li>
 </ol>
@@ -808,7 +808,7 @@ The bot should run, then close with an error because there are still setup steps
 <li>Open the <code>config.yml</code> file in your installation of Discord HvZ and paste it over an existing ID labeled <code>live</code>. Now your bot knows which server it should interact with.</li>
 </ol>
 <h2 id="setting-up-google-sheets">Setting up Google Sheets<a class="headerlink" href="#setting-up-google-sheets" title="Permanent link">&para;</a></h2>
-<p>The nicest way the bot displays the player and tag lists is through a Google Sheets document. Anyone who knows how to use a spreadsheet can read and manipulate the information. Unfortunately, Google makes their interface to set this up a bit awkward. Feel free to come back to this step later by disabling the Sheets feature by setting the <a href="../config_options/#google_sheets_export">google_sheets_export</a> option in <code>config.yml</code> to false.</p>
+<p>The nicest way the bot displays the player and tag lists is through a Google Sheets document. Anyone who knows how to use a spreadsheet can read and manipulate the information. Unfortunately, Google makes their interface to set this up a bit awkward. Feel free to come back to this step later by disabling the Sheets feature by setting the <a href="../config_options/#google_sheet_export">google_sheets_export</a> option in <code>config.yml</code> to false.</p>
 <p>The interfaces on the following Google pages are big and complicated. Take your time and look carefully.</p>
 <ol>
 <li>Go <a href="https://console.cloud.google.com/projectcreate" target="_blank">here</a> to make a Google Cloud Platform project. The <strong>Location</strong> field is not important.</li>
@@ -820,7 +820,7 @@ The bot should run, then close with an error because there are still setup steps
 <li>Go to <a href="https://drive.google.com/">Google Drive</a> and create a Sheets document which will be used to display members and tags to your admin or moderator team during the game. Set up its location and permissions appropriately for that purpose.</li>
 <li>Add two sheets to this document: one called "Members" and the other called "Tags". If you want to change these names, see the <a href="../config_options/#sheet_names">sheet_names</a> config option.</li>
 <li>Copy the sheet ID from the URL in your address bar. It is the code highlighted here: <img alt="Sheet ID" src="../img/sheet_id.png" /></li>
-<li>In <code>config.yml</code>, paste the ID over the one labeled <code>live</code>. Now your bot knows what sheet to send data to.</li>
+<li>In <code>config.yml</code>, find the <code>available_servers</code> section and paste the ID over the one labeled <code>live</code>. Now your bot knows what sheet to send data to.</li>
 <li>The first time you launch the bot, it will open a browser window and ask you to log in with a Google Account. The only requirements for this account are that it has access to the bot's Google Sheet: it could be a personal account, or one created only for this purpose.</li>
 </ol>
 <h2 id="final-steps">Final Steps<a class="headerlink" href="#final-steps" title="Permanent link">&para;</a></h2>
