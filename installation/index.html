@@ -675,7 +675,7 @@ Now type <code>.\Discord-HvZ.exe</code> and hit Enter. The bot will start. Use C
 <ol>
 <li>Download the latest "Express Install" .zip for Linux from <a href="https://github.com/Conner-Anderson/discord-hvz/releases" target="_blank">Releases</a></li>
 <li>Unzip it to a convenient folder you intend to run the bot from.</li>
-<li>Run <strong>Discord-HvZ</strong>. The app should open, then close with an error because there are still setup steps to complete. Start with <a href="#creating-a-discord-bot">Creating a Discord Bot</a></li>
+<li>Run <strong>Discord-HvZ</strong> through a command window. (Otherwise, the program runs without a window, which is a Linux problem.) The app should open, then close with an error because there are still setup steps to complete. Start with <a href="#creating-a-discord-bot">Creating a Discord Bot</a></li>
 </ol>
 </div>
 </div>
@@ -692,7 +692,7 @@ Now type <code>.\Discord-HvZ.exe</code> and hit Enter. The bot will start. Use C
 <p>Download an "Advanced Install" .zip for Windows from <a href="https://github.com/Conner-Anderson/discord-hvz/releases" target="_blank">Releases</a> <strong>OR</strong> download the project directly from the branch you want. Unzip it to a convenient folder you intend to run the bot from.</p>
 </li>
 <li>
-<p>Install any <a href="https://www.python.org/downloads/" target="_blank">Python</a> version from  3.9.7 to 3.10.x. If helping with development, use 3.9.7. Open a command prompt and use <code>python --version</code> to see what you already have installed, if anything.</p>
+<p>Install any <a href="https://www.python.org/downloads/" target="_blank">Python</a> version from  3.9.7 to 3.10.x. If helping with development, use 3.9.x. Open a command prompt and use <code>python --version</code> to see what you already have installed, if anything.</p>
 </li>
 <li>
 <p>The below steps are how to install the project's dependencies from a <code>pyproject.toml</code> file with <a href="https://python-poetry.org/docs/" target="_blank"><code>Poetry</code></a>. There are other ways to do this which you are welcome to try.</p>
@@ -729,7 +729,7 @@ If you're assisting with development, use this instead:
 </code></pre></div></p>
 </li>
 <li>
-<p>If there's no <code>.env</code> file in the top directory, copy it from the <code>default_data_files</code> folder to the top directory of the project. You'll need it in the next section. You may need to show hidden files to do this.</p>
+<p>Create a file in the install directory called <code>.env</code> and open it in a text editor. Put <code>TOKEN=''</code> inside. You will fill the quotes with a Discord token in a later step.</p>
 </li>
 <li>
 <p>Run the bot:
@@ -747,7 +747,7 @@ The bot should run, then close with an error because there are still setup steps
 <p>Download an "Advanced Install" .zip for Linux from <a href="https://github.com/Conner-Anderson/discord-hvz/releases" target="_blank">Releases</a> <strong>OR</strong> download the project directly from the branch you want. Unzip it to a convenient folder you intend to run the bot from.</p>
 </li>
 <li>
-<p>Linux usually comes with Python installed. Open a command prompt and use <code>python --version</code> to see what you already have installed. You may use any <a href="https://www.python.org/downloads/" target="_blank">Python</a> version from  3.9.7 to 3.10.x. If helping with development, use 3.9.7. </p>
+<p>Linux often comes with Python installed. Open a command prompt and use <code>python3 --version</code> to see what you already have installed. You may use any <a href="https://www.python.org/downloads/" target="_blank">Python</a> version from  3.9.7 to 3.10.x. If helping with development, use 3.9.x. (Installing alternate Python versions on Linux is baffling to me. Good luck!)</p>
 </li>
 <li>
 <p>The below steps are how to install the project's dependencies from a <code>pyproject.toml</code> file with <a href="https://python-poetry.org/docs/" target="_blank"><code>Poetry</code></a>. There are other ways to do this which you are welcome to try.</p>
@@ -765,7 +765,7 @@ The bot should run, then close with an error because there are still setup steps
 </code></pre></div></p>
 </li>
 <li>
-<p>Open a command prompt in your Discord-HvZ folder.  </p>
+<p>Restart your command prompt and direct it to your Discord-HvZ folder.  </p>
 </li>
 <li>
 <p>Do you want to install Discord-HvZ with a Python version <em>other</em> than the one currently active? Use the command <a href="https://python-poetry.org/docs/managing-environments/#switching-between-environments" target="_blank">here</a>.</p>
@@ -779,7 +779,7 @@ If you're assisting with development, use this instead:
 </code></pre></div></p>
 </li>
 <li>
-<p>Copy the <code>.env</code> file from the <code>default_data_files</code> folder to the top directory of the project. You'll need it in the next section. You may need to show hidden files to do this.</p>
+<p>Create a file in the install directory called <code>.env</code> and open it in a text editor. Put <code>TOKEN=''</code> inside. You will fill the quotes with a Discord token in a later step.</p>
 </li>
 <li>
 <p>Run the bot, with your command prompt directed to the project folder:
