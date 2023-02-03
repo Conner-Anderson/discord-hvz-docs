@@ -810,8 +810,8 @@ The bot should run, then close with an error because there are still setup steps
 <li>Check boxes until the permissions look like the picture below. These are the permissions your server needs to grant the bot to do its job.
 <img alt="Bot Permissions" src="../img/bot_permissions.webp" /></li>
 <li>Copy the <strong>Generated URL</strong> and use your browser to follow it. Follow the instructions to invite your bot to the correct server.</li>
-<li>Go back to your application at the Developer Portal and to its General Information page. Copy the <strong>Application ID</strong> to your clipboard.</li>
-<li>Open the <code>config.yml</code> file in your installation of Discord-HvZ and find the <code>server_id</code> setting, replacing that ID with yours. Now your bot knows which server it should interact with.</li>
+<li>If on desktop, go to Discord and turn on <strong>Developer Mode</strong> in the <strong>Advanced</strong> settings menu. Right click your server's icon and <strong>Copy ID</strong> to get the server ID. If using the browser version of Discord, go to your server, then copy the first long number in the address bar.</li>
+<li>Open the <code>config.yml</code> file in your installation of Discord-HvZ and find the <code>server_id</code> setting, replacing that ID with that of your server. Now your bot knows which server it should interact with. Note that the bot is not designed to work on multiple servers at once.</li>
 </ol>
 <h2 id="setting-up-google-sheets">Setting up Google Sheets<a class="headerlink" href="#setting-up-google-sheets" title="Permanent link">&para;</a></h2>
 <p>The nicest way the bot displays the player and tag lists is through a Google Sheets document. Anyone who knows how to use a spreadsheet can read and manipulate the information. Unfortunately, Google makes their interface to set this up a bit awkward. Feel free to come back to this step later by disabling the Sheets feature by setting the <a href="../config_options/#google_sheet_export">google_sheets_export</a> option in <code>config.yml</code> to false.</p>
