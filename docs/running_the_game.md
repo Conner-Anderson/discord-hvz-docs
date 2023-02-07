@@ -58,7 +58,7 @@ When players use the bot wrong, or have disputes, or have some edge-case that I 
 
 ### Conclude the Game
 
-Once the final mission comes or whatever you decide should stop zombie tagging, simply [tag_logging](../config_options/#tag_logging) config option to stop tagging, or restrict the tag logging channel.
+Once the final mission comes or whatever you decide should stop zombie tagging, simply disable the [tag_logging](../config_options/#tag_logging) config option to stop tagging, or restrict the tag logging channel with Discord permissions.
 
 That's it! Make sure to save the contents of the Google Sheet somewhere safe for reference. If you're going to use the server for other things when not playing HvZ, you can remove roles until all the unneeded channels become invisible, then put those channels into a category to keep until next time.
 

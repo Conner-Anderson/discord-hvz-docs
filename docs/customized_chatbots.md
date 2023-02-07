@@ -180,5 +180,5 @@ Having a database column with no corresponding question is perfectly fine, thoug
 A script or question processor is a python function that, given a user response, determines how the bot should react. For example, when a player enters a tag code into the Tag Logging chatbot, the response is sent through a question processor function which finds a match for that code in the database. If there's a match, it returns the tagged player's ID which is saved as the question response. If there's no match, the player is prompted to try again. These processors could be as simple as duplicating the effects of regex, but are intended for creative uses.
 
 !!! warning "Under Construction"
-    Custom processors are a complex feature that could lead to many pitfalls. The documentation still needs to be written. For now, if you want custom functionality, contact the author of Discord HvZ.
+    Custom processors are a complex feature that could lead to many pitfalls. The documentation still needs to be written. For now, if you want custom functionality, contact the author of Discord-HvZ.
 

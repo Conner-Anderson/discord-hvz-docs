@@ -7,6 +7,11 @@ Discord-HVZ is a run-it-yourself Discord bot that helps run **Humans vs. Zombies
 
 For information about HvZ: [humansvszombies.org](https://humansvszombies.org/)
 
+For official releases and to see the source code, see the [:simple-github: GitHub](https://github.com/Conner-Anderson/discord-hvz).
+
+Need help setting up and running an HvZ game, either with this bot or in general?  
+Contact me at *conneranderson.dev@gmail.com*
+
 ## Summary
 
 This bot was developed to run HvZ games at LeTourneau University in Texas, but is now published for use anywhere. A version of it has been used each semester at LeTourneau since Fall 2019. It is a *simple and streamlined* system designed to leverage the easy-to-use features of Discord which already manages accounts, permissions, and messaging. It was developed in response to the popular service *HvZ SOURCE* going offline.
@@ -14,7 +19,7 @@ This bot was developed to run HvZ games at LeTourneau University in Texas, but i
 ### Features
 
 - Registers players for the game through a questionnaire
-- Accepts tag reports from players by validating tags, changing player factions, and announcing the tag to all players
+- Accepts tag reports from players by validating tags, changing player roles, and announcing the tag to all players
 - Displays the zombie tag geneology and other statistics
 - Displays player and tag information in a live Google Sheet for easy administration
 - Fully supports both desktop and mobile users
@@ -27,7 +32,7 @@ This bot was developed to run HvZ games at LeTourneau University in Texas, but i
 ### Prerequisites
 
 
-- Mild tech-saviness. You must have dabbled in coding at some point, are not afraid of a command-prompt, and are willing to read a few StackOverflow pages if things don't go quite right.
+- Mild tech-saviness. You must not be afraid of a command prompt or editing configuration files.
 - A Discord account that owns the server you want to run the bot on. You could also just get the owner to do a few setup steps for you.
 - A Google account to access the Google Sheet and the Sheets API.
 - A computer with an internet connection that can run the bot for the entire game. For example, you may leave your desktop on, borrow someone's old laptop, or use a Raspberry Pi in the closet. 
@@ -48,4 +53,4 @@ This software is for HvZ admin teams willing to do a bit of legwork to set it up
 
 ## Development
 
-Hey! I'm Conner, and I wrote this bot. I did it to support the game I love at my alma-mater and also to learn how to write better software. If people actually use this to run HvZ games, I'll keep adding features and fixing bugs! I also offer support for anyone at **conneranderson.dev@gmail.com**
+Hey! I'm Conner, and I wrote this bot. I did it to support the game I love at my alma-mater and also to learn how to write better software. If people actually use this to run HvZ games, I'll keep adding features and fixing bugs!

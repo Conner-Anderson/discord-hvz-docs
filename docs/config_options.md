@@ -8,7 +8,13 @@ When editing the file, your goal should be to *follow the pattern*. Extra spaces
 
 Don't make the name of something just a number. It might technically work, but you're risking the bot mis-interpreting. So don't be cheeky and name your Google Sheet for tags `69`. Likewise, other clever names with odd characters are just not good form. Let text be text here.
 
+### `server_id`
 
+The ID of the Discord server to connect to. This can be found at the [Discord Developer Portal](https://discord.com/developers/applications){target=_blank} under General Information for your application.
+
+### `sheet_id`
+
+The ID of the Google Sheet the bot will send its data to. See [Setting Up Google Sheets](../installation/#setting-up-google-sheets) for more information.
 
 ### `registration`
 
@@ -26,7 +32,6 @@ When `true`, the identity of an [OZ](../commands/#oz) is not included in tag ann
 
 When `true`, any changes to the database will be pushed out to the Google Sheet. The bot is designed to use the Google Sheet, so it is not recommended to go without it. If you are having trouble with the Google Sheet and you just need the bot to work, set this to `false`. As a backup, you can still read the database with an editor such as [DB Browser for SQLite](https://sqlitebrowser.org/).
 
-### `sheet_ids`
 
 ### `sheet_names`
 
