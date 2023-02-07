@@ -46,3 +46,15 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra:
+  version:
+    provider: mike
+
+plugins:
+  - mike:
+      # These fields are all optional; the defaults are as below...
+      canonical_version: null
+      version_selector: true
+      css_dir: css
+      javascript_dir: js
