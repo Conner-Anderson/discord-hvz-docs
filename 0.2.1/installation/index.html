@@ -378,6 +378,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#updating" class="md-nav__link">
+    Updating
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -590,6 +597,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating" class="md-nav__link">
+    Updating
+  </a>
   
 </li>
       
@@ -830,6 +844,33 @@ Until this bug is fixed, reboot the bot daily to stay logged in.</p>
 <h3 id="start-the-bot">Start the Bot<a class="headerlink" href="#start-the-bot" title="Permanent link">&para;</a></h3>
 <p>Now the time has come to start the bot for real. After you do, check if it spits out any alarming errors. If so, scroll up and check that you did everything.</p>
 <p>There's still more to do before starting a game of HvZ, so continue to <a href="../server_setup">Server Setup</a>.</p>
+<h2 id="updating">Updating<a class="headerlink" href="#updating" title="Permanent link">&para;</a></h2>
+<p>To update the bot to a new version, follow the instructions for your installation method below.</p>
+<details class="tip">
+<summary>Express Install</summary>
+<ol>
+<li>Backup your installation in case something goes wrong.</li>
+<li>Download the Express Install .zip from <a href="https://github.com/Conner-Anderson/discord-hvz/releases">Releases</a> and unzip it somewhere. Copy the <code>.exe</code> file from there to your existing installation, overwriting. </li>
+<li>Read the changelog for the version you want in <a href="https://github.com/Conner-Anderson/discord-hvz/releases">Releases</a> and any between it and your current version. In the <strong>Breaking Changes</strong> sections, read the notes. This will tell you if you need to change any other files before starting your bot. For example, if there was a <em>breaking change</em> to <code>config.yml</code>, you'll need to either fix yours, or add your information to the new file.</li>
+</ol>
+</details>
+<details class="warning">
+<summary>Advanced Install</summary>
+<ol>
+<li>Backup your installation in case something goes wrong.</li>
+<li>Download the Express Install .zip from <a href="https://github.com/Conner-Anderson/discord-hvz/releases">Releases</a> and unzip it somewhere. Copy all files from the new folder to your existing installation, overwriting, except for these files:<ul>
+<li>.env</li>
+<li>config.yml</li>
+<li>credentials.json</li>
+<li>hvzdb.db</li>
+<li>scripts.yml</li>
+<li>token.json</li>
+<li>any other file you've customized</li>
+</ul>
+</li>
+<li>Read the changelog for the version you want in <a href="https://github.com/Conner-Anderson/discord-hvz/releases">Releases</a> and any between it and your current version. In the <strong>Breaking Changes</strong> sections, read the notes. This will tell you if you need to change any other files before starting your bot. For example, if there was a <em>breaking change</em> to <code>config.yml</code>, you'll need to either fix yours, or add your information to the new file.</li>
+</ol>
+</details>
 
 
 
