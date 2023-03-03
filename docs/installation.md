@@ -199,7 +199,7 @@ The interfaces on the following Google pages are big and complicated. Take your 
 
 !!! bug
 		The Google login for Sheets will expire after a few days, even when running. That isn't supposed to happen unless the bot is offline for days.  
-		In the meantime, reboot the bot daily to stay logged in.
+		Until this bug is fixed, reboot the bot daily to stay logged in.
 
 
 ## Final Steps
@@ -216,3 +216,25 @@ Set the timezone *the game* is taking place in for the [timezone](../config_opti
 Now the time has come to start the bot for real. After you do, check if it spits out any alarming errors. If so, scroll up and check that you did everything.
 
 There's still more to do before starting a game of HvZ, so continue to [Server Setup](../server_setup).
+
+## Updating
+
+To update the bot to a new version, follow the instructions for your installation method below.
+
+??? Tip "Express Install"
+	1. Backup your installation in case something goes wrong.
+	1. Download the Express Install .zip from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and unzip it somewhere. Copy the `.exe` file from there to your existing installation, overwriting. 
+	1. Read the changelog for the version you want in [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and any between it and your current version. In the **Breaking Changes** sections, read the notes. This will tell you if you need to change any other files before starting your bot. For example, if there was a *breaking change* to `config.yml`, you'll need to either fix yours, or add your information to the new file.
+
+
+??? Warning "Advanced Install"
+	1. Backup your installation in case something goes wrong.
+	1. Download the source code .zip from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and unzip it somewhere. Copy all files from the new folder to your existing installation, overwriting, except for these files:
+		- .env
+		- config.yml
+		- credentials.json
+		- hvzdb.db
+		- scripts.yml
+		- token.json
+		- any other file you've customized
+	1. Read the changelog for the version you want in [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and any between it and your current version. In the **Breaking Changes** sections, read the notes. This will tell you if you need to change any other files before starting your bot. For example, if there was a *breaking change* to `config.yml`, you'll need to either fix yours, or add your information to the new file.

@@ -1,4 +1,6 @@
 site_name: Discord-HVZ Docs
+remote_branch: gh-pages
+remote_name: origin
 
 nav:
   - Home: index.md
@@ -15,6 +17,7 @@ nav:
 
 theme:
   name: material
+  custom_dir: overrides
   logo: img/avatar.png
   font:
     text: Open Sans

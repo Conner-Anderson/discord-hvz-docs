@@ -50,7 +50,7 @@ Once the OZs are publically revealed, it is a good idea to give them the zombie 
 
 ### Manage the Game
 
-After zombies are loose, the bot mostly handles everything, leaving you to deal with problems out in the real world. Zombies will use the tag logging chatbot to turn humans into zombies, the tags get announced in the appropriate channel, and the zombie channel starts getting more active. You should probably post with the [tag tree](../commands/#tag-tree) command every so often to show players the dangerous zombies.
+After zombies are loose, the bot mostly handles everything, leaving you to deal with problems out in the real world. Zombies will use the tag logging chatbot to turn humans into zombies, the tags get announced in the appropriate channel, and the zombie channel starts getting more active. You should probably post with the [tag_tree](../commands/#tag_tree) command every so often to show players the dangerous zombies.
 
 There typically comes a point in the game where you will accept no new players. Use the [registration](../config_options/#registration) config option to disallow new players, or make the registration channel inaccessible.
 

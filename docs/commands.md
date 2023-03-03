@@ -45,6 +45,27 @@ You don't need OZs to run the game. Manually giving a player (even a human) acce
 
 See the [silent-oz](../config_options/#silent-oz) config option.
 
+### tag_tree
+`/tag_tree`
+
+Trust me, this is your players' favorite command. It will post a geneology of zombies, showing who tagged whom. If the message overflows the 2000 character limit for messages, the message paginate with buttons to navigate the pages.
+
+!!! warning
+    If the pagination feature is needed, the pages will not be navigable after the bot restarts. This is a potential thing to fix in the future.
+
+### game_plot
+`/game_plot [static]`
+
+Posts a plot of zombie and human populations over time, including new players who register. The plot will start at the first tag and end at the last.
+
+The `static` option is by default `false`, which means the plot will update as the game progresses. If `true`, it will never change.
+
+??? info "Game Plot Example"
+    ![Example of a game plot over the course of a game.](img/game_plot_example.jpeg)
+
+!!! warning
+    The Game Plot is a really cool, but complex feature. Check first to see if it works before showing players. 
+
 ### post_button
 `/post_button [text] [button_1] [button_2] ... [button_5]`
 
@@ -56,12 +77,9 @@ By default, the bot comes with two chatbot buttons: registration and tag_logging
 ### post_panel
 `/post_panel <element1> [element 2] ... [element 6] [static]`
 
-A *panel* is a special message with attached game information, each of which is called an *element*. A panel can have multiple elements, such as the number of humans, number of zombies, players registered today, etc. There's a special element called `GamePlotElement` which displays a plot of human and zombie populations over the course of the game.
+A *panel* is a special message with attached game information, each of which is called an *element*. A panel can have multiple elements, such as the number of humans, number of zombies, players registered today, etc. There's a special element called `GamePlotElement` which displays the plot from the [game_plot](#game_plot) command.
 
 The `static` option is by default `false`, which means the panel will keep its values up to date with the current game. If `true`, it will never change.
-
-!!! warning
-    The `GamePlotElement` is a really cool, but complex feature. Check first to see if it works before showing players. 
 
 ### shutdown
 `/shutdown [force]`
@@ -78,15 +96,12 @@ Lists all members. Generally, looking at the Google Sheet is a better option.
 ### member register
 `/member register <member>`
 
-Starts a registration chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will be actually registered. Helpful if the chatbot is acting up for someone, or they were accidentally deleted from the game.
+Starts a registration chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will be actually registered. Helpful if the chatbot is acting up for someone, or they were accidentally deleted from the game. Will work even if [registration](../config_options/#registration) is disabled.
 
 ### member delete
 `/member delete <member>`
 
 Removes the selected member from the game. They remain on the server and in tag records, but are removed from as a member from the database and have their game roles revoked. Will probably mess up some game statistics...
-
-!!! bug
-    Cannot currently delete members no longer on the server.
 
 ### member edit
 `/member edit <member> <attribute> <value>`
@@ -106,7 +121,7 @@ An advanced command to directly edit a member in the database. You should consul
 ### tag create
 `/tag create <member>`
 
-Starts a tag logging chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will actually make the tag. Helpful if the chatbot is acting up for someone, or if they just can't get to a device.
+Starts a tag logging chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will actually make the tag. Helpful if the chatbot is acting up for someone, or if they just can't get to a device. Will work even if [tag_logging](../config_options/#tag_logging) is disabled.
 
 ### tag delete
 `/tag delete <tag_id>`
@@ -137,14 +152,6 @@ An advanced command to directly edit a tag in the database. You should consult t
 
 !!! warning
     This command does not yet support changing dates. It might work... but it might not. Use a database editor like [DB Browser for SQLite](https://sqlitebrowser.org/) to change dates until this feature is added.
-
-### tag tree
-`/tag tree`
-
-Trust me, this is your players' favorite command. It will post a geneology of zombies, showing who tagged whom. If the message overflows the 2000 character limit for messages, the message paginate with buttons to navigate the pages.
-
-!!! warning
-    If the pagination feature is needed, the pages will not be navigable after the bot restarts. This is a potential thing to fix in the future.
 
 
 ## Item Commands
