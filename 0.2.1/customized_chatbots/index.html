@@ -849,6 +849,11 @@
 <h4 id="script-title"><code>&lt;script title&gt;</code><a class="headerlink" href="#script-title" title="Permanent link">&para;</a></h4>
 <p>Required, unique</p>
 <p>In the example above, the word <code>tag_logging</code> at the top declares that everything indented beneath it is the tag_logging script. If this name changes, any existing buttons for this chatbot will break.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Currently, you <em>must</em> have a script titled "tag_logging" and one titled "registration" for the<br />
+<a href="../commands/#tag_create">/tag create</a> &amp; <a href="../commands/#member_register">/member register</a> commands to function.</p>
+</div>
 <h4 id="table"><code>table</code><a class="headerlink" href="#table" title="Permanent link">&para;</a></h4>
 <p>Required, unique. 
 Which table the script will be saved to. This table must be defined in the config file; see <a href="../config_options/#database_tables">Config Options: database_tables</a></p>
