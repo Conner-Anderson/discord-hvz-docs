@@ -12,7 +12,7 @@ When you remove a player's *human* role and give them a *zombie* role, they **ar
 
 ### Chatbots
 
-A chatbot is a conversation the bot holds with a member through private messages to collect information. By default, the bot comes with two: registration, and tag_logging. Chatbots are launched when the member clicks a button created by the [post_button](../commands/#post_button) command, or when an admin uses the [tag create](../commands/#tag-create) / [member register](../commands/#member-register) commands.
+A chatbot is a conversation the bot holds with a member through private messages or a pop-up window to collect information. By default, the bot comes with two: registration, and tag_logging. Chatbots are launched when the member clicks a button created by the [post_button](../commands/#post_button) command, or when an admin uses the [tag create](../commands/#tag-create) / [member register](../commands/#member-register) commands.
 
 Set up the bot and try one out!
 

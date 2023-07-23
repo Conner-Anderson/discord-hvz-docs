@@ -1,0 +1,22 @@
+In PowerShell:
+
+To "build" a local version of the docs:
+	poetry run mike deploy [version]
+	Example: "poetry run mike deploy 0.2.1"
+	Use --update-aliases to set what is the "latest" version:
+	Example: "poetry run mike --update-aliases deploy 0.2.1 latest"
+To host a local server of the mike site:
+	poetry run mike serve
+
+To host an auto-updating version that is non-mike:
+	poetry run mkdocs serve
+
+To update an existing version on the online site:
+	poetry run mike deploy --push [version]
+	Example: "poetry run mike --push deploy 0.2.1"
+
+To add a new, latest version to the online site:
+	poetry run mike deploy --push --update-aliases [version] latest
+	Example: "poetry run mike --push --update-aliases deploy 0.2.1 latest"
+
+To run any of the above commands without "poetry run", first use "poetry shell".

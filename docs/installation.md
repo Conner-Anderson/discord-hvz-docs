@@ -213,7 +213,7 @@ Set the timezone *the game* is taking place in for the [timezone](../config_opti
 
 ### Start the Bot
 
-Now the time has come to start the bot for real. After you do, check if it spits out any alarming errors. If so, scroll up and check that you did everything.
+Now the time has come to start the bot for real, as described at the end of your chosen install method above. After you do, check if it spits out any alarming errors. If so, scroll up and check that you did everything.
 
 There's still more to do before starting a game of HvZ, so continue to [Server Setup](../server_setup).
 
@@ -229,11 +229,11 @@ To update the bot to a new version, follow the instructions for your installatio
 
 ??? Warning "Advanced Install"
 	1. Backup your installation in case something goes wrong.
-	1. Download the source code .zip from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and unzip it somewhere. Copy all files from the new folder to your existing installation, overwriting, except for these files:
+	1. Download the source code .zip from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and unzip it somewhere. Copy the following files from the original install to the new one:
 		- .env
 		- config.yml
 		- credentials.json
-		- hvzdb.db
+		- \[your_database_name\].db
 		- scripts.yml
 		- token.json
 		- any other file you've customized
