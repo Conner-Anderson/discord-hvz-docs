@@ -12,8 +12,8 @@
         <link rel="prev" href="../commands/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.0">
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -21,10 +21,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.402914a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -121,6 +121,8 @@
         </div>
       </div>
     </div>
+    
+      
     
     
     
@@ -528,6 +530,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#database_path" class="md-nav__link">
+    database_path
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -707,6 +716,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#database_path" class="md-nav__link">
+    database_path
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -809,6 +825,21 @@
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="nt">tagger_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
 </code></pre></div>
 <p>If any of these are missing from the config, the bot will create them anyways and position them last on the Google Sheet.</p>
+<h3 id="database_path"><code>database_path</code><a class="headerlink" href="#database_path" title="Permanent link">&para;</a></h3>
+<p>The path to the database file. If the file does not exist, the bot will create it. Regardless of which system the bot runs on, use <code>/</code> forward slashes in the path. The bot will search for the file in the top directory: the one that contains config.yml, .env, etc.<br />
+If the path is a file, it must end in <code>.db</code>. If it is a folder, it must already exist, and a file called <code>game_database.db</code> will be created inside.<br />
+If the path starts with a <code>/</code>, it begins at the root of the drive. On Windows, <code>/Users/JohnDoe</code> would go to John Doe's user folder.</p>
+<div class="admonition example">
+<p class="admonition-title"><code>database_path</code> Examples</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my_database_name.db&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;database_storage/&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my_databases/spring_2025_database.db&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/Users/JohnDoe/Documents/HvZ-Databases/game_database-2023.db&quot;</span>
+</code></pre></div></p>
+</div>
 
 
 
@@ -848,10 +879,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "content.tabs.link"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "content.tabs.link"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ce72ebac.min.js"></script>
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>
