@@ -765,16 +765,26 @@
 </code></pre></div>
 </div>
 <h3 id="timezone"><code>timezone</code><a class="headerlink" href="#timezone" title="Permanent link">&para;</a></h3>
-<p>A number representing the timezone the game is occuring in, as an offset from UTC. -7 is US West Coast, -5 is US Central, -4 is US East Coast, Central Europe is +2</p>
-<p>With this, the bot could run in a different timezone than the game is played in and still report accurate times.</p>
+<p>The timezone <em>the game</em> is occuring in. You bot can run in a different timezone and still report accurate times. Surround this in quotes.</p>
+<p>For the best timezone tracking, make this value your location. Find the IANA database name for your location here: <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia: List of database timezones</a></p>
+<p>Alternately, use a number representing the timezone the game is occuring in as an offset from UTC. -7 is US West Coast, -5 is US Central, -4 is US East Coast, Central Europe is +2</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">timezone</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;America/Chicago&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">timezone</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;+5&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">timezone</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Europe/Warsaw&quot;</span>
+</code></pre></div></p>
+</div>
 <h3 id="channel_names"><code>channel_names</code><a class="headerlink" href="#channel_names" title="Permanent link">&para;</a></h3>
 <p>These settings map specific channels the bot needs to the actual channel names on the server. If these channels aren't specified, the bot will search for the channels that match the names below. The bot will fail to start if it doesn't find a channel.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">channel_names</span><span class="p">:</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">tag-announcements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zombie-kills</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">report-tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report-tags-here</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">zombie-chat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zombie-lair</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">channel_names</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">tag-announcements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zombie-kills</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">report-tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report-tags-here</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">zombie-chat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zombie-lair</span>
 </code></pre></div>
 </div>
 <h4 id="tag-announcements"><code>tag-announcements</code><a class="headerlink" href="#tag-announcements" title="Permanent link">&para;</a></h4>
@@ -787,10 +797,10 @@
 <p>These settings map specific roles the bot needs to the actual role names on the server. If these roles aren't specified, the bot will search for the roles that match the names below. The bot will fail to start if it doesn't find a role.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">role_names</span><span class="p">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">zombie</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Brain Eater</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">human</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Brain-Box</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">player</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Player</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">role_names</span><span class="p">:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">zombie</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Brain Eater</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">human</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Brain-Box</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">player</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Player</span>
 </code></pre></div>
 </div>
 <h4 id="zombie"><code>zombie</code><a class="headerlink" href="#zombie" title="Permanent link">&para;</a></h4>
@@ -810,19 +820,19 @@
 <p>A table is a 2-dimensional array of data: like a spreadsheet. Each row is an entry (such as a member or a tag) and each row has the same columns. The bot's database, stored as the file <code>hvzdb.db</code>, contains both tables defined here and behind-the-scenes tables you can't control. The tables defined here collect data from <a href="../running_the_game/#chatbots">chatbots</a>.</p>
 <p>The order the columns appear in the config is the order they will appear on the Google Sheet.</p>
 <p>The bot requires the following tables, columns, and types to function:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">database_tables</span><span class="p">:</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">members</span><span class="p">:</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">faction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">tag_code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">want_bandana</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">registration_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateTime</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">oz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Boolean</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">tag_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">incrementing_integer</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nt">tagger_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="nt">tagger_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">database_tables</span><span class="p">:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">members</span><span class="p">:</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">faction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">tag_code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">want_bandana</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">registration_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateTime</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">oz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Boolean</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nt">tag_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">incrementing_integer</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nt">tagger_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="nt">tagger_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
 </code></pre></div>
 <p>If any of these are missing from the config, the bot will create them anyways and position them last on the Google Sheet.</p>
 <h3 id="database_path"><code>database_path</code><a class="headerlink" href="#database_path" title="Permanent link">&para;</a></h3>
@@ -831,13 +841,13 @@ If the path is a file, it must end in <code>.db</code>. If it is a folder, it mu
 If the path starts with a <code>/</code>, it begins at the root of the drive. On Windows, <code>/Users/JohnDoe</code> would go to John Doe's user folder.</p>
 <div class="admonition example">
 <p class="admonition-title"><code>database_path</code> Examples</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my_database_name.db&quot;</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my_database_name.db&quot;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;database_storage/&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;database_storage/&quot;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my_databases/spring_2025_database.db&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my_databases/spring_2025_database.db&quot;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/Users/JohnDoe/Documents/HvZ-Databases/game_database-2023.db&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">database_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/Users/JohnDoe/Documents/HvZ-Databases/game_database-2023.db&quot;</span>
 </code></pre></div></p>
 </div>
 
