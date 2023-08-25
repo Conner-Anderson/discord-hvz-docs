@@ -19,6 +19,7 @@ theme:
   name: material
   custom_dir: overrides
   logo: img/avatar.png
+  favicon: img/favicon.ico
   font:
     text: Open Sans
   palette:

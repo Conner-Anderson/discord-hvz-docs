@@ -5,7 +5,7 @@
 
 Discord-HVZ is a run-it-yourself Discord bot that helps run **Humans vs. Zombies** games. This documentation contains everything you need to manage an HVZ game with the help of [Discord](https://discord.com/).
 
-For information about HvZ: [humansvszombies.org](https://humansvszombies.org/)
+For information about HvZ: [Humans vs Zombies on Wikipedia](https://en.wikipedia.org/wiki/Humans_vs._Zombies) 
 
 For official releases and to see the source code, see the [:simple-github: GitHub](https://github.com/Conner-Anderson/discord-hvz).
 

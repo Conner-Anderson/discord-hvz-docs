@@ -46,9 +46,22 @@ These are the names of the sheets within the Google Sheets document that data wi
 
 ### `timezone`
 
-A number representing the timezone the game is occuring in, as an offset from UTC. -7 is US West Coast, -5 is US Central, -4 is US East Coast, Central Europe is +2
+The timezone *the game* is occuring in. You bot can run in a different timezone and still report accurate times. Surround this in quotes.
 
-With this, the bot could run in a different timezone than the game is played in and still report accurate times.
+For the best timezone tracking, make this value your location. Find the IANA database name for your location here: [Wikipedia: List of database timezones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+
+Alternately, use a number representing the timezone the game is occuring in as an offset from UTC. -7 is US West Coast, -5 is US Central, -4 is US East Coast, Central Europe is +2
+
+!!! example
+	``` yaml
+	timezone: 'America/Chicago'
+	```
+	``` yaml
+	timezone: "+5"
+	```
+	``` yaml
+	timezone: "Europe/Warsaw"
+	```
 
 ### `channel_names`
 
@@ -122,3 +135,23 @@ database_tables:
 ```
 
 If any of these are missing from the config, the bot will create them anyways and position them last on the Google Sheet.
+
+### `database_path`
+
+The path to the database file. If the file does not exist, the bot will create it. Regardless of which system the bot runs on, use `/` forward slashes in the path. The bot will search for the file in the top directory: the one that contains config.yml, .env, etc.  
+If the path is a file, it must end in `.db`. If it is a folder, it must already exist, and a file called `game_database.db` will be created inside.  
+If the path starts with a `/`, it begins at the root of the drive. On Windows, `/Users/JohnDoe` would go to John Doe's user folder.
+
+!!! example "`database_path` Examples"
+	```yaml
+	database_path: "my_database_name.db"
+	```
+	```yaml
+	database_path: "database_storage/"
+	```
+	```yaml
+	database_path: "my_databases/spring_2025_database.db"
+	```
+	```yaml
+	database_path: "/Users/JohnDoe/Documents/HvZ-Databases/game_database-2023.db"
+	```
