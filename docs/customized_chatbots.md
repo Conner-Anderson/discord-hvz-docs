@@ -1,7 +1,7 @@
 # Customized Chatbots
 
 !!! info "Prerequisite"
-    **This page assumes you've read the [Running the Game](../running_the_game) page after [setting up your bot](../server_setup).**
+    **This page assumes you've read the [Running the Game](running_the_game.md) page after [setting up your bot](server_setup.md).**
 
 ## Beginning
 
@@ -52,7 +52,7 @@ There are two types of chatbots: **modal** and **non-modal**. A modal chatbot sh
         query: "About when did the tag happen? Format: 3:04pm"
         valid_regex: '(?i)\d{1,2}:[0-5]?[0-9]\s?(am|pm)\s?(yesterday)?'
         rejection_response: Please use a format like 12:26pm or 7:00 am
-        modal_default: Current_Time
+        modal_default: current_time
         processor: tag_time
     ```
 
@@ -129,11 +129,11 @@ In the example above, the word `tag_logging` at the top declares that everything
 
 !!! warning
     Currently, you *must* have a script titled "tag_logging" and one titled "registration" for the  
-    [/tag create](../commands/#tag_create) & [/member register](../commands/#member_register) commands to function.
+    [/tag create](commands.md#tag-create) & [/member register](commands.md#member-register) commands to function.
 
 ### `table`
 Required, unique.  
-Which table the script will be saved to. This table must be defined in the config file; see [Config Options: database_tables](../config_options/#database_tables)
+Which table the script will be saved to. Tables are created automatically as needed; the old `database_tables` config option is ignored in 0.4.0+.
 
 ### `modal`
 Optional, either `true` or `false`  

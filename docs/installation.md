@@ -16,14 +16,14 @@ There are two ways to install the software itself:
 
 	**Download a simple executable that runs from a folder.**
 
-	This is an easy method for those who don't care about viewing or editing the source code. The caveat is that you can't use [custom script processors](../customized_chatbots/#custom-processors), which is an advanced feature that doesn't have documentation yet.
+	This is an easy method for those who don't care about viewing or editing the source code. The caveat is that you can't use [custom script processors](customized_chatbots.md#custom-processors), which is an advanced feature that doesn't have documentation yet.
 
 
 !!! warning "Advanced Install"
 
 	**Install the Python package with all dependencies.**
 
-	This allows one to edit any of the source code, and use [custom script processors](../customized_chatbots/#custom-processors). For those who intend to tinker with things under the hood, or even contribute to the project.
+	This allows one to edit any of the source code, and use [custom script processors](customized_chatbots.md#custom-processors). For those who intend to tinker with things under the hood, or even contribute to the project.
 
 	This install is a more involved process where more things can go wrong. If using Windows, it may even require a 6GB download.
 
@@ -181,7 +181,7 @@ There are two ways to install the software itself:
 
 ## Setting up Google Sheets
 
-The nicest way the bot displays the player and tag lists is through a Google Sheets document. Anyone who knows how to use a spreadsheet can read and manipulate the information. Unfortunately, Google makes their interface to set this up a bit awkward. Feel free to come back to this step later by disabling the Sheets feature by setting the [google_sheets_export](../config_options/#google_sheet_export) option in `config.yml` to false.
+The nicest way the bot displays the player and tag lists is through a Google Sheets document. Anyone who knows how to use a spreadsheet can read and manipulate the information. Unfortunately, Google makes their interface to set this up a bit awkward. Feel free to come back to this step later by disabling the Sheets feature by setting the [google_sheets_export](config_options.md#google_sheet_export) option in `config.yml` to false.
 
 The interfaces on the following Google pages are big and complicated. Take your time and look carefully.
 
@@ -192,7 +192,7 @@ The interfaces on the following Google pages are big and complicated. Take your 
 1. When done, you'll get the option to **DOWNLOAD JSON**. Look around for a :material-download: icon and download the file to your installation of Discord-HvZ.
 1. Rename this `.json` file to `credentials.JSON`. Now your bot has permission to communicate with Google!
 1. Go to [Google Drive](https://drive.google.com/) and create a Sheets document which will be used to display members and tags to your admin or moderator team during the game. Set up its location and permissions appropriately for that purpose.
-1. Add two sheets to this document: one called "Members" and the other called "Tags". If you want to change these names, see the [sheet_names](../config_options/#sheet_names) config option.
+1. Add two sheets to this document: one called "Members" and the other called "Tags". If you want to change these names, see the [sheet_names](config_options.md#sheet_names) config option.
 1. Copy the sheet ID from the URL in your address bar. It is the code highlighted here: ![Sheet ID](img/sheet_id.png)
 1. In `config.yml`, find the `sheet_id` setting and replace the ID there with yours. Now your bot knows what sheet to send data to.
 1. The first time you launch the bot, it will open a browser window and ask you to log in with a Google Account. The only requirements for this account are that it has edit access to the bot's Google Sheet: it could be a personal account, or one created only for this purpose.
@@ -204,18 +204,18 @@ The interfaces on the following Google pages are big and complicated. Take your 
 
 ## Final Steps
 
-Configure the `channel_names` section in `config.yml`. Please see [Config Options: channel_names](../config_options/#channel_names) for information. You can change these channels later, but **the bot must have permission to view and post in these channels.**
+Configure the `channel_names` section in `config.yml`. Please see [Config Options: channel_names](config_options.md#channel_names) for information. You can change these channels later, but **the bot must have permission to view and post in these channels.**
 
-Configure the `roles` section configured as well. See [Config Options: role_names](../config_options/#role_names) for information.
+Configure the `roles` section configured as well. See [Config Options: role_names](config_options.md#role_names) for information.
 **The bot must have permission to manage these roles**, meaning they have to be lower than it in the role hierarchy in the server settings. 
 
-Set the timezone *the game* is taking place in for the [timezone](../config_options/#timezone) setting.
+Set the timezone *the game* is taking place in for the [timezone](config_options.md#timezone) setting.
 
 ### Start the Bot
 
 Now the time has come to start the bot for real, as described at the end of your chosen install method above. After you do, check if it spits out any alarming errors. If so, scroll up and check that you did everything.
 
-There's still more to do before starting a game of HvZ, so continue to [Server Setup](../server_setup).
+There's still more to do before starting a game of HvZ, so continue to [Server Setup](server_setup.md).
 
 ## Updating
 

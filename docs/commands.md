@@ -39,11 +39,11 @@ Reports whether or not a member is an OZ (original zombie), and changes their OZ
 
 An OZ is defined as a player who is set as one in the database. This status has no bearing on the game, but is useful for tracking purposes.
 
-When an OZ is added with this command, they are given specific permission to access the [zombie-chat](../config_options/#zombie-chat) and [report-tags](../config_options/#report-tags) channels. This permission is invisible to other server members, and so can be kept secret. When an OZ is removed, these specific permissions are removed as well.
+When an OZ is added with this command, they are given specific permission to access the [zombie-chat](config_options.md#zombie-chat) and [report-tags](config_options.md#report-tags) channels. This permission is invisible to other server members, and so can be kept secret. When an OZ is removed, these specific permissions are removed as well.
 
 You don't need OZs to run the game. Manually giving a player (even a human) access to the tag logging button is enough to get things started.
 
-See the [silent-oz](../config_options/#silent-oz) config option.
+See the [silent-oz](config_options.md#silent_oz) config option.
 
 ### tag_tree
 `/tag_tree`
@@ -101,7 +101,7 @@ Lists all members. Generally, looking at the Google Sheet is a better option.
 ### member register
 `/member register <member>`
 
-Starts a registration chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will be actually registered. Helpful if the chatbot is acting up for someone, or they were accidentally deleted from the game. Will work even if [registration](../config_options/#registration) is disabled.
+Starts a registration chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will be actually registered. Helpful if the chatbot is acting up for someone, or they were accidentally deleted from the game. Will work even if [registration](config_options.md#registration) is disabled.
 
 ### member delete
 `/member delete <member>`
@@ -132,7 +132,7 @@ This is useful for cleaning up after a completed game.
 ### tag create
 `/tag create <member>`
 
-Starts a tag logging chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will actually make the tag. Helpful if the chatbot is acting up for someone, or if they just can't get to a device. Will work even if [tag_logging](../config_options/#tag_logging) is disabled.
+Starts a tag logging chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will actually make the tag. Helpful if the chatbot is acting up for someone, or if they just can't get to a device. Will work even if [tag_logging](config_options.md#tag_logging) is disabled.
 
 ### tag delete
 `/tag delete <tag_id>`

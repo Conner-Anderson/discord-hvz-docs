@@ -14,7 +14,7 @@ The ID of the Discord server to connect to. This can be found at the [Discord De
 
 ### `sheet_id`
 
-The ID of the Google Sheet the bot will send its data to. See [Setting Up Google Sheets](../installation/#setting-up-google-sheets) for more information.
+The ID of the Google Sheet the bot will send its data to. See [Setting Up Google Sheets](installation.md#setting-up-google-sheets) for more information.
 
 ### `registration`
 
@@ -26,7 +26,7 @@ When `true`, the tag_log button will launch the chatbot. When `false`, it will n
 
 ### `silent_oz`
 
-When `true`, the identity of an [OZ](../commands/#oz) is not included in tag announcements. This lets you keep who the OZs are a mystery until players see them in the real world. You will likely want to turn this `False` once the OZs are commonly known.
+When `true`, the identity of an [OZ](commands.md#oz) is not included in tag announcements. This lets you keep who the OZs are a mystery until players see them in the real world. You will likely want to turn this `False` once the OZs are commonly known.
 
 ### `google_sheet_export`
 
