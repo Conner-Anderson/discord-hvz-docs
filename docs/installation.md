@@ -222,14 +222,16 @@ There's still more to do before starting a game of HvZ, so continue to [Server S
 To update the bot to a new version, follow the instructions for your installation method below.
 
 ??? Tip "Express Install"
-	1. Backup your installation in case something goes wrong.
+	1. Backup your entire installation!
 	1. Download the Express Install .zip from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and unzip it somewhere. Copy the `.exe` file from there to your existing installation, overwriting. 
 	1. Read the changelog for the version you want in [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and any between it and your current version. In the **Breaking Changes** sections, read the notes. This will tell you if you need to change any other files before starting your bot. For example, if there was a *breaking change* to `config.yml`, you'll need to either fix yours, or add your information to the new file.
 
 
 ??? Warning "Advanced Install"
-	1. Backup your installation in case something goes wrong.
-	1. Download the source code .zip from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and unzip it somewhere. Copy the following files from the original install to the new one:
+	1. Backup your installation folder entirely!
+	1. Delete the contents of the original folder.
+	1. Read the changelog for the version you want in [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and any between it and your current version. In the **Breaking Changes** sections, read the notes. This will tell you if you need to change any other files before starting your bot. For example, if there was a *breaking change* to `config.yml`, you'll need to either fix yours, or add your information to the new file.
+	1. Download the source code .zip from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and unzip it into the original install folder. Copy the following files from the backup into the install folder, accounting for any changes you need from the previous step:
 		- .env
 		- config.yml
 		- credentials.json
@@ -237,4 +239,5 @@ To update the bot to a new version, follow the instructions for your installatio
 		- scripts.yml
 		- token.json
 		- any other file you've customized
-	1. Read the changelog for the version you want in [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and any between it and your current version. In the **Breaking Changes** sections, read the notes. This will tell you if you need to change any other files before starting your bot. For example, if there was a *breaking change* to `config.yml`, you'll need to either fix yours, or add your information to the new file.
+	1. Update the dependencies by opening a command prompt in the top-level folder: the one containing config.yml. Run `poetry install`. If you used a non-Poetry method to install dependencies
+	in the first place, use that method to update based on pyproject.toml.

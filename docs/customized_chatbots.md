@@ -1,7 +1,7 @@
 # Customized Chatbots
 
-**Before reading this page, you should be familiar  
- with everything on the [Running the Game](../running_the_game) page.**
+!!! info "Prerequisite"
+    **This page assumes you've read the [Running the Game](../running_the_game) page after [setting up your bot](../server_setup).**
 
 ## Beginning
 
@@ -82,8 +82,6 @@ The order of the fields does not matter, except that questions are displayed in 
       table: tags
       beginning: Let's log a tag. Type 'cancel' at any time to stop this conversation.
       ending: Tag logged! Make sure your newly-brainless friend feels welcome in the hoard.
-      starting_processor: tag_logging_start
-      ending_processor: tag_logging_end
       questions:
       - column: tagged_id
         display_name: Tag Code
@@ -107,12 +105,11 @@ The order of the fields does not matter, except that questions are displayed in 
       table: members # Required, unique
       beginning: Registration started! # Message that appears when the chatbot starts. Optional.
       ending: Welcome to HvZ! # Message that appears when the chatbot ends. Optional.
-      starting_processor: some_function # Described later in this document. Optional.
-      ending_processor: another_function # Described later in this document. Optional.
       postable_button_color: green # Chatbot button color: green, red, blurple, gray, or url. Optional.
       postable_button_label: Click Me! # Visible label on the chatbot button. Optional.
       questions: # A list of the questions. Required.
       - column: favorite_color # The database column the answer will go in. No spaces, lower case. Required, unique per script.
+        column_type: string # The data type of the column in the database. string, boolean, integer, datetime, or incrementing_integer
         display_name: Favorite Color # The name of the question the user will see. Required.
         query: Favorite color? # The question text. Required.
         valid_regex: '\D*' # The regex the answer must satisfy. Optional.
@@ -156,12 +153,13 @@ Optional, default: `"Chatbot complete!"`
 A message sent when the chatbot ends. Preferably, it should tell the player what they ought to do next.
 
 ### `starting_processor`
-Optional  
-The name of the starting processor function the script should use. Processors are described further below. If you make a new script and haven't made a new processor, this should be removed.
+Optional, Advanced Option  
+The name of the starting processor function the script should use. This feature is not yet documented.
 
-### `starting_processor`
-Optional  
-The name of the ending processor function the script should use. Processors are described further below. If you make a new script and haven't made a new processor, this should be removed.
+### `ending_processor`
+Optional, Advanced Option  
+The name of the ending processor function the script should use. This feature is not yet documented.
+
 
 ### `postable_button_color`
 Optional, default: `green`  
@@ -180,6 +178,16 @@ Questions are indented beneath this heading, marked with a `-` as shown in the e
 ### `column`
 Required, unique per script  
 The database column the question is saves to. When the bot is working with the question, this is effectively its "name". Remember, database column names should be lower case and without spaces. A name like "most_favorite_color" is fine.
+
+### `column_type`
+Optional, defaults to 'string'  
+The data type of the column in the database. Does not need to be specified for essential columns that the bot requires to function. If making a custom question, the default 'string' value will suffice.  
+When exported to Google Sheets, equivalent types will be chosen. If you choose a type other than string, your question must use regex or a processor to ensure the input actually matches.
+
+Valid types: string, integer, boolean, datetime, incrementing_integer (Aliases: str, int, bool, incr_integer)
+
+An incrementing_integer is an integer column that is not set by the bot. Each time a new row is added to the database, a guaranteed unique integer one higher than the last is added to this column.
+*There can only be one incrementing_integer per table.*
 
 ### `display_name`
 Optional, non-modal only, default: value of `column`  
@@ -227,7 +235,13 @@ In either case, the character limit is 4000.
 
 ### `processor`
 *Optional*  
-Processors are an advanced feature described in their own section below. They can replace the functionality of regex, and make many checks that regex can't. They can customize their error responses to users, and transform the response into another form.
+A processor is a function that takes the response given by the user, then validates and/or transforms it. Customizing these is an advanced feature not yet documented. Ask the developer for help with customization.  
+
+!!! info "Available question processors"
+    `tag_time` converts the input text into a datetime object which specifies an exact timezone-aware date and time. If 'yesterday' is in the text, the previous day is used. Future times raise an error.
+    The question that uses this should also use a regex. It has been tested with this one:  
+    (?i)\d{1,2}:[0-5]?[0-9]\s?(am|pm)\s?(yesterday)?  
+    `tag_code_to_member_id` converts the input text into the Discord ID of the tagged member if the text matches a tag code. Raises an error if it does not match, the member is not on the server, or they are already a zombie.
 
 ## Add or Remove Questions
 
@@ -235,29 +249,27 @@ To add a question, these are the basic steps:
 
 - Add a new question section to a script in `scripts.yml` via copy-paste
 - Edit the values to your liking, making sure to pick a new column name
-- Add a new column to the [database_tables](../config_options/#database_tables) section of `config.yml`
-- Delete your existing database file `hvzdb.db` and restart the bot, which will re-create it with your new column.
+- Consider if you need to specify a [`column_type`](#column_type) other than a string. In most cases, you do not, and can ignore this.
+- Delete your existing database file and restart the bot, which will re-create it with your new column.
 - Test the chatbot!
 
 When using copy-paste to add a new question, make sure the indentation lines up. Indentation is made with spaces, not tabs.
 
-When adding a database column to `config.yml`, you should set the type to `String` unless you are using processors.
 
 !!! warning
-    The bot will *not* add new columns to an existing database. This is called "migration" is and something the bot does not support for safety reasons. If you delete your database, the bot will create a fresh one that includes your new columns. If you need to add new columns without deleting your database, use a database editor such as [DB Browser for SQLite](https://sqlitebrowser.org/).
+    The bot will *not* add new columns to an existing table in the database. This is called "migration" is and something the bot does not support for safety reasons. If you delete your database, the bot will create a fresh one that includes your new columns. If you need to add new columns without deleting your database, use a database editor such as [DB Browser for SQLite](https://sqlitebrowser.org/).
 
 You ought to thouroughly test the new question to make sure it looks the way you want, especially if you are using regex or processor functions.
 
 To remove a question, these are the basic steps:
 
 - Delete the question section in its script in `scripts.yml`
-- Optional: Remove the column from the database table in `config.yml`, then delete the database and restart the bot to remake it.
-
-Having a database column with no corresponding question is perfectly fine, though it will still appear on the Google Sheet.
 
 ## Custom Processors
 
-A script or question processor is a python function that, given a user response, determines how the bot should react. For example, when a player enters a tag code into the Tag Logging chatbot, the response is sent through a question processor function which finds a match for that code in the database. If there's a match, it returns the tagged player's ID which is saved as the question response. If there's no match, the player is prompted to try again. These processors could be as simple as duplicating the effects of regex, but are intended for creative uses.
+A processor is a function that accepts either a question response or the set of responses from the entire chatbot and validates them, perhaps even transforming the result. They are core to how the bot works and are designed to be personalized. When a member is registered, a processor is the function that adds additional columns to the database such as Discord name and nickname. Making a publically useable API is difficult, however, so customizing these processors is not ready for public release and has no documentation.
+
+If you would like to customize how question or chatbot data is processed, please contact the developer at conneranderson.dev@gmail.com. He's happy to consider your request and if feasible, work with you to customize your version of the bot.
 
 !!! warning "Under Construction"
     Custom processors are a complex feature that could lead to many pitfalls. The documentation still needs to be written. For now, if you want custom functionality, contact the author of Discord-HvZ.

@@ -26,16 +26,18 @@ This bot was developed to run HvZ games at LeTourneau University in Texas, but i
 - Includes many commands for managing the game
 - Includes configuration options and customizable questionnaires
 - Works on existing Discord servers without disrupting non-players
-- Works on :material-microsoft-windows: Windows and :material-linux: Linux, with :material-apple: Mac coming soon.
+- Works on :material-microsoft-windows: Windows and :material-linux: Linux, with :material-apple: Mac coming if requested.
 - Written in Python, potentially aiding personalization
 
 ### Prerequisites
 
 
-- Mild tech-saviness. You must not be afraid of a command prompt or editing configuration files.
+- Mild tech-saviness. You must not be afraid of a using a command prompt, reading instructions, or editing configuration files.
+	- This documentation will assume you can find your own way around managing a Discord server.
 - A Discord account that owns the server you want to run the bot on. You could also just get the owner to do a few setup steps for you.
 - A Google account to access the Google Sheet and the Sheets API.
-- A computer with an internet connection that can run the bot for the entire game. For example, you may leave your desktop on, borrow someone's old laptop, or use a Raspberry Pi in the closet. 
+- A computer with an internet connection that can run the bot for the entire game. For example, you may leave your desktop on, borrow someone's old laptop, or use a Raspberry Pi in the closet.
+	- OK, it isn't working on Raspberry Pi right now.  
 
 This software is for HvZ admin teams willing to do a bit of legwork to set it up, giving you an HvZ system entirely under your control.
 

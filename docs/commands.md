@@ -60,7 +60,7 @@ Posts a plot of zombie and human populations over time, including new players wh
 
 The `static` option is by default `false`, which means the plot will update as the game progresses. If `true`, it will never change.
 
-??? info "Game Plot Example"
+??? example "Game Plot Example"
     ![Example of a game plot over the course of a game.](img/game_plot_example.jpeg)
 
 !!! warning
@@ -74,12 +74,17 @@ There is no limit to the number of the same button that can exist in a guild, an
 
 By default, the bot comes with two chatbot buttons: registration and tag_logging.
 
+![A posted button](img/button_example.png)
+
 ### post_panel
 `/post_panel <element1> [element 2] ... [element 6] [static]`
 
 A *panel* is a special message with attached game information, each of which is called an *element*. A panel can have multiple elements, such as the number of humans, number of zombies, players registered today, etc. There's a special element called `GamePlotElement` which displays the plot from the [game_plot](#game_plot) command.
 
 The `static` option is by default `false`, which means the panel will keep its values up to date with the current game. If `true`, it will never change.
+
+??? example "Panel Example"
+    ![A posted panel](img/panel_example.png)
 
 ### shutdown
 `/shutdown [force]`
@@ -114,6 +119,12 @@ An advanced command to directly edit a member in the database. You should consul
 
 !!! warning
     This command does not yet support changing dates. It might work... but it might not. Use a database editor like [DB Browser for SQLite](https://sqlitebrowser.org/) to change dates until this feature is added.
+
+### member remove_roles
+`/member remove_roles <member> [role]`
+
+Removes one of the three game roles from all members on the server.
+This is useful for cleaning up after a completed game.
 
 
 ## Tag Commands

@@ -1,7 +1,7 @@
 # Server Setup
 
 !!! info "Prerequisite"
-        These steps depend on a working bot after successful [installation](../installation).
+        **These steps depend on a working bot after successful [installation](../installation).**
 
 This bot is managed with Slash Commands. If you're unfamiliar with Discord Slash Commands, look here: [Slash Commands Overview](../commands/#overview)  
 Remember, you can't use a command in a channel the bot can't read and send messages in.
@@ -22,6 +22,8 @@ Send the command [`/post_button`](../commands/#post_button) and selection "regis
 
 Do the same for the `tag_logging` button in the same channel you configured as the [`report-tags`](../config_options/#report-tags) channel. You can get creative and post this button in other places too, but be warned: **anyone who can click the button can try to log a tag, even humans.** It is designed this way so *you* are responsible for setting up the server roles, permissions, and channels to keep humans and zombies where you want them.
 
+Remember that during tag logging and registration, threads will be created for the users to interact with the bot. Make sure the channel you post the buttons in has permission to create threads.
+
 It is also recommended that you create a channel purely for sending the bot commands, and leave it muted. No need to clutter up other channels with that. Remember to give the bot access to it.
 
 
@@ -40,3 +42,9 @@ Currently, commands are sorted into groups: `member`, `tag`, etc. Discord doesn'
 !!! question "Next Steps"
         At this point in the setup process, it is probably a good idea to read the [Running the Game](../running_the_game) guide and do a test game with some of your team. Register some users, set some OZs, and start tagging! This'll help you really understand how the system works and what you'd like to tweak.  
         When you're ready, take a look at [Customized Chatbots](../customized_chatbots) to put on the final touches!
+
+### Next Steps
+
+At this point in the setup process, it is probably a good idea to read the [Running the Game](../running_the_game) guide and do a test game with some of your team. Register some users, set some OZs, and start tagging! This'll help you really understand how the system works and what you'd like to tweak.  
+After testing, you'll probably want to modify the registration and tag logging chatbots to use questions relevent to your game.
+Go to the [Customized Chatbots](../customized_chatbots) page to learn about configuring these questions.

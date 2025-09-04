@@ -103,39 +103,6 @@ Tagged players will lose this role and should not have access to click the tag l
 A role all registered players get. Good for separating game channels from other channels in the guild. 
 
 
-### `database_tables`
-
-This is a sophisticated set of config options that allows you to define the following:
-
-- What tables the database has
-- What columns each table has
-- What type of data each column stores
-- The order the columns appear on the Google Sheet
-
-A table is a 2-dimensional array of data: like a spreadsheet. Each row is an entry (such as a member or a tag) and each row has the same columns. The bot's database, stored as the file `hvzdb.db`, contains both tables defined here and behind-the-scenes tables you can't control. The tables defined here collect data from [chatbots](../running_the_game/#chatbots).
-
-The order the columns appear in the config is the order they will appear on the Google Sheet.
-
-The bot requires the following tables, columns, and types to function:
-
-``` yaml
-database_tables:
-  members:
-    id: String
-    name: String
-    faction: String
-    tag_code: String
-    want_bandana: String
-    registration_time: DateTime
-    oz: Boolean
-  tags:
-    tag_id: incrementing_integer
-    tagger_id: String
-    tagger_name: String
-```
-
-If any of these are missing from the config, the bot will create them anyways and position them last on the Google Sheet.
-
 ### `database_path`
 
 The path to the database file. If the file does not exist, the bot will create it. Regardless of which system the bot runs on, use `/` forward slashes in the path. The bot will search for the file in the top directory: the one that contains config.yml, .env, etc.  
@@ -154,4 +121,40 @@ If the path starts with a `/`, it begins at the root of the drive. On Windows, `
 	```
 	```yaml
 	database_path: "/Users/JohnDoe/Documents/HvZ-Databases/game_database-2023.db"
+	```
+
+### `sheet_columns`
+
+A way to specify what order the columns from the database are shown on the Google Sheet.
+The lists of columns are categorized by the database table they appear in.
+All columns will always show on the Google Sheet, but any not listed here will be added to the right.
+
+??? example "Default setup for `sheet_columns`"
+	```yaml
+	sheet_columns:
+	  members:
+	    - id
+	    - name
+	    - nickname
+	    - discord_name
+	    - cpo
+	    - faction
+	    - tag_code
+	    - oz_desire
+	    - email
+	    - want_bandana
+	    - registration_time
+	    - oz
+	  tags:
+	    - tag_id
+	    - tagger_id
+	    - tagger_name
+	    - tagger_nickname
+	    - tagger_discord_name
+	    - tagged_id
+	    - tagged_name
+	    - tagged_nickname
+	    - tag_time
+	    - report_time
+	    - revoked_tag
 	```

@@ -8,17 +8,17 @@
 
 When at all possible, this bot is designed to use Discord permissions and roles to manage the game.
 
-When you remove a player's *human* role and give them a *zombie* role, they **are** a zombie. The bot will follow along behind the scenes just fine.
+When you remove a player's *human* role and give them a *zombie* role, they **are** a zombie. The bot will follow along behind the scenes just fine as long as it is running.
 
 ### Chatbots
 
-A chatbot is a conversation the bot holds with a member through private messages or a pop-up window to collect information. By default, the bot comes with two: registration, and tag_logging. Chatbots are launched when the member clicks a button created by the [post_button](../commands/#post_button) command, or when an admin uses the [tag create](../commands/#tag-create) / [member register](../commands/#member-register) commands.
+A chatbot is a conversation the bot holds with a member through a thread or a pop-up window to collect information. By default, the bot comes with two: registration, and tag_logging. Chatbots are launched when the member clicks a button created by the [post_button](../commands/#post_button) command, or when an admin uses the [tag create](../commands/#tag-create) / [member register](../commands/#member-register) commands.
 
 Set up the bot and try one out!
 
 ### OZs
 
-An OZ is an Original Zombie: a zombie who is set up by the admins. Every game must begin with one or more OZs. As far as this bot is concerned, an OZ is a player who can click the [tag_logging button](../commands/#post_button) even if they are human. There is an [OZ command](../commands/#oz) which is recommended, but that is merely an aid for convenience and to make later statistics easier.
+An OZ is an Original Zombie: a zombie who is set up by the admins rather than via tagging. Every game must begin with one or more OZs. As far as this bot is concerned, an OZ is a player who can click the [tag_logging button](../commands/#post_button) even if they are human. There is an [OZ command](../commands/#oz) which is recommended, but that is merely an aid for convenience and to make later statistics easier.
 
 ### Items
 
@@ -50,11 +50,18 @@ Once the OZs are publically revealed, it is a good idea to give them the zombie 
 
 ### Manage the Game
 
-After zombies are loose, the bot mostly handles everything, leaving you to deal with problems out in the real world. Zombies will use the tag logging chatbot to turn humans into zombies, the tags get announced in the appropriate channel, and the zombie channel starts getting more active. You should probably post with the [tag_tree](../commands/#tag_tree) command every so often to show players the dangerous zombies.
+If you've educated your players about how to use the bot, the following should now happen automatically:
+
+1. Zombies make tags, collecting the tag code from the tagged. They go to the Discord server, tap a [tag logging button](../commands/#post_button), and submit their tag.
+1. Tags are announced in the [tag announcement channel](..config_options/#tag-announcements) for all to see.
+1. Any information [panels](../commands/#post_panel) not set to static update with values such as zombie and player counts.
+1. As long as [registration](../config_options/#registration) is on, new players can join the game.
+
+You should probably post with the [tag_tree](../commands/#tag_tree) command every so often to show players the dangerous zombies.
 
 There typically comes a point in the game where you will accept no new players. Use the [registration](../config_options/#registration) config option to disallow new players, or make the registration channel inaccessible.
 
-When players use the bot wrong, or have disputes, or have some edge-case that I haven't thought of because they're human, use the various [commands](../commands) to manage it all. If you really get stuck, email the developer for help (**conneranderson.dev@gmail.com**) or submit an issue on the [github](https://github.com/Conner-Anderson/discord-hvz/issues).
+When players use the bot wrong, or have disputes, or have creat edge-cases that no one has thought of, use the various [commands](../commands) to manage it all. If you really get stuck, email the developer for help (**conneranderson.dev@gmail.com**) or submit an issue on the [github](https://github.com/Conner-Anderson/discord-hvz/issues).
 
 ### Conclude the Game
 
