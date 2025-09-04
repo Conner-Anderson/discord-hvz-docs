@@ -1175,9 +1175,9 @@
 <p><code>/oz &lt;member&gt; [setting]</code></p>
 <p>Reports whether or not a member is an OZ (original zombie), and changes their OZ status if <code>setting</code> is supplied.</p>
 <p>An OZ is defined as a player who is set as one in the database. This status has no bearing on the game, but is useful for tracking purposes.</p>
-<p>When an OZ is added with this command, they are given specific permission to access the <a href="../config_options.md#zombie-chat">zombie-chat</a> and <a href="../config_options.md#report-tags">report-tags</a> channels. This permission is invisible to other server members, and so can be kept secret. When an OZ is removed, these specific permissions are removed as well.</p>
+<p>When an OZ is added with this command, they are given specific permission to access the <a href="../config_options/#zombie-chat">zombie-chat</a> and <a href="../config_options/#report-tags">report-tags</a> channels. This permission is invisible to other server members, and so can be kept secret. When an OZ is removed, these specific permissions are removed as well.</p>
 <p>You don't need OZs to run the game. Manually giving a player (even a human) access to the tag logging button is enough to get things started.</p>
-<p>See the <a href="../config_options.md#silent-oz">silent-oz</a> config option.</p>
+<p>See the <a href="../config_options/#silent-oz">silent-oz</a> config option.</p>
 <h3 id="tag_tree">tag_tree<a class="headerlink" href="#tag_tree" title="Permanent link">&para;</a></h3>
 <p><code>/tag_tree</code></p>
 <p>Trust me, this is your players' favorite command. It will post a geneology of zombies, showing who tagged whom. If the message overflows the 2000 character limit for messages, the message paginate with buttons to navigate the pages.</p>
@@ -1220,7 +1220,7 @@ There is no limit to the number of the same button that can exist in a guild, an
 <p>Lists all members. Generally, looking at the Google Sheet is a better option.</p>
 <h3 id="member-register">member register<a class="headerlink" href="#member-register" title="Permanent link">&para;</a></h3>
 <p><code>/member register &lt;member&gt;</code></p>
-<p>Starts a registration chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will be actually registered. Helpful if the chatbot is acting up for someone, or they were accidentally deleted from the game. Will work even if <a href="../config_options.md#registration">registration</a> is disabled.</p>
+<p>Starts a registration chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will be actually registered. Helpful if the chatbot is acting up for someone, or they were accidentally deleted from the game. Will work even if <a href="../config_options/#registration">registration</a> is disabled.</p>
 <h3 id="member-delete">member delete<a class="headerlink" href="#member-delete" title="Permanent link">&para;</a></h3>
 <p><code>/member delete &lt;member&gt;</code></p>
 <p>Removes the selected member from the game. They remain on the server and in tag records, but are removed from as a member from the database and have their game roles revoked. Will probably mess up some game statistics...</p>
@@ -1240,7 +1240,7 @@ This is useful for cleaning up after a completed game.</p>
 <h2 id="tag-commands">Tag Commands<a class="headerlink" href="#tag-commands" title="Permanent link">&para;</a></h2>
 <h3 id="tag-create">tag create<a class="headerlink" href="#tag-create" title="Permanent link">&para;</a></h3>
 <p><code>/tag create &lt;member&gt;</code></p>
-<p>Starts a tag logging chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will actually make the tag. Helpful if the chatbot is acting up for someone, or if they just can't get to a device. Will work even if <a href="../config_options.md#tag_logging">tag_logging</a> is disabled.</p>
+<p>Starts a tag logging chatbot with you on behalf of the selected member. You will answer all questions, but the member you selected will actually make the tag. Helpful if the chatbot is acting up for someone, or if they just can't get to a device. Will work even if <a href="../config_options/#tag_logging">tag_logging</a> is disabled.</p>
 <h3 id="tag-delete">tag delete<a class="headerlink" href="#tag-delete" title="Permanent link">&para;</a></h3>
 <p><code>/tag delete &lt;tag_id&gt;</code></p>
 <p>Deletes a tag log by its <code>tag_id</code>, as viewable on the Google Sheet. If the target of the deleted tag has no more tags against them, they are reverted to human. Remember, if you don't like this functionality, you can always swap their roles back via Discord.</p>
