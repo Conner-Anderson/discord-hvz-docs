@@ -622,20 +622,20 @@
 <h1 id="server-setup">Server Setup<a class="headerlink" href="#server-setup" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Prerequisite</p>
-<div class="highlight"><pre><span></span><code>**These steps depend on a working bot after successful [installation](../installation).**
+<div class="highlight"><pre><span></span><code>**These steps depend on a working bot after successful [installation](../installation.md).**
 </code></pre></div>
 </div>
-<p>This bot is managed with Slash Commands. If you're unfamiliar with Discord Slash Commands, look here: <a href="../commands/#overview">Slash Commands Overview</a><br />
+<p>This bot is managed with Slash Commands. If you're unfamiliar with Discord Slash Commands, look here: <a href="../commands.md#overview">Slash Commands Overview</a><br />
 Remember, you can't use a command in a channel the bot can't read and send messages in.</p>
 <h3 id="buttons">Buttons<a class="headerlink" href="#buttons" title="Permanent link">&para;</a></h3>
 <p>To play the game, server members need a way to click the registration button, and zombies need a way to click the tag logging button. Let's create those now. </p>
 <p>Go the channel you want the registration button in. It is recommended that this channel be one dedicated to information about the game. 
-Send the command <a href="../commands/#post_button"><code>/post_button</code></a> and selection "registration" as the <code>button_1</code> option. </p>
+Send the command <a href="../commands.md#post_button"><code>/post_button</code></a> and selection "registration" as the <code>button_1</code> option. </p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>If you don't like where the registration button sits in the channel, you can always delete it and try again later. The buttons are quite forgiving.</p>
 </div>
-<p>Do the same for the <code>tag_logging</code> button in the same channel you configured as the <a href="../config_options/#report-tags"><code>report-tags</code></a> channel. You can get creative and post this button in other places too, but be warned: <strong>anyone who can click the button can try to log a tag, even humans.</strong> It is designed this way so <em>you</em> are responsible for setting up the server roles, permissions, and channels to keep humans and zombies where you want them.</p>
+<p>Do the same for the <code>tag_logging</code> button in the same channel you configured as the <a href="../config_options.md#report-tags"><code>report-tags</code></a> channel. You can get creative and post this button in other places too, but be warned: <strong>anyone who can click the button can try to log a tag, even humans.</strong> It is designed this way so <em>you</em> are responsible for setting up the server roles, permissions, and channels to keep humans and zombies where you want them.</p>
 <p>Remember that during tag logging and registration, threads will be created for the users to interact with the bot. Make sure the channel you post the buttons in has permission to create threads.</p>
 <p>It is also recommended that you create a channel purely for sending the bot commands, and leave it muted. No need to clutter up other channels with that. Remember to give the bot access to it.</p>
 <h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h3>
@@ -643,22 +643,22 @@ Send the command <a href="../commands/#post_button"><code>/post_button</code></a
 <details class="example">
 <summary>Recommended Starting Permissions</summary>
 <p>This is a good default permission setup to begin with. Disable commands for the <code>@everyone</code> role, and enable them for your administration role. Enable the bot in all channels.
-Override the permissions for the <code>/code</code> command to allow all players to use it (the same role as set in <a href="../config_options/#role_names"><code>role_names</code></a>)<br />
+Override the permissions for the <code>/code</code> command to allow all players to use it (the same role as set in <a href="../config_options.md#role_names"><code>role_names</code></a>)<br />
 Override the permissions for <code>/tag_tree</code> so your moderator team can use it.
 <img alt="Discord Permissions Example" src="../img/command_permissions_1.webp" /><br />
-You can restrict the bot to only certain channels, but remember that the bot must have permission to view and post in the channels <a href="../config_options/#channel_names">listed here</a>.</p>
+You can restrict the bot to only certain channels, but remember that the bot must have permission to view and post in the channels <a href="../config_options.md#channel_names">listed here</a>.</p>
 </details>
 <p>Currently, commands are sorted into groups: <code>member</code>, <code>tag</code>, etc. Discord doesn't let you vary permissions between commands within a group. This way of organizing commands may change, especially if people complain about it.</p>
 <div class="admonition question">
 <p class="admonition-title">Next Steps</p>
-<div class="highlight"><pre><span></span><code>At this point in the setup process, it is probably a good idea to read the [Running the Game](../running_the_game) guide and do a test game with some of your team. Register some users, set some OZs, and start tagging! This&#39;ll help you really understand how the system works and what you&#39;d like to tweak.  
-When you&#39;re ready, take a look at [Customized Chatbots](../customized_chatbots) to put on the final touches!
+<div class="highlight"><pre><span></span><code>At this point in the setup process, it is probably a good idea to read the [Running the Game](../running_the_game.md) guide and do a test game with some of your team. Register some users, set some OZs, and start tagging! This&#39;ll help you really understand how the system works and what you&#39;d like to tweak.  
+When you&#39;re ready, take a look at [Customized Chatbots](../customized_chatbots.md) to put on the final touches!
 </code></pre></div>
 </div>
 <h3 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h3>
-<p>At this point in the setup process, it is probably a good idea to read the <a href="../running_the_game">Running the Game</a> guide and do a test game with some of your team. Register some users, set some OZs, and start tagging! This'll help you really understand how the system works and what you'd like to tweak.<br />
+<p>At this point in the setup process, it is probably a good idea to read the <a href="../running_the_game.md">Running the Game</a> guide and do a test game with some of your team. Register some users, set some OZs, and start tagging! This'll help you really understand how the system works and what you'd like to tweak.<br />
 After testing, you'll probably want to modify the registration and tag logging chatbots to use questions relevent to your game.
-Go to the <a href="../customized_chatbots">Customized Chatbots</a> page to learn about configuring these questions.</p>
+Go to the <a href="../customized_chatbots.md">Customized Chatbots</a> page to learn about configuring these questions.</p>
 
 
 
