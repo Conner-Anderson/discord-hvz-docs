@@ -20,6 +20,12 @@ Set up the bot and try one out!
 
 An OZ is an Original Zombie: a zombie who is set up by the admins rather than via tagging. Every game must begin with one or more OZs. As far as this bot is concerned, an OZ is a player who can click the [tag_logging button](commands.md#post_button) even if they are human. There is an [OZ command](commands.md#oz) which is recommended, but that is merely an aid for convenience and to make later statistics easier.
 
+### Guests
+
+Players without Discord accounts can join as guests. An admin registers them and gives them their tag codes, then trusted people on the server can report tags on their behalf. They still appear in the tag tree and game statistics, so a guest in the middle of a chain of tags won't break it.
+
+See [Players without Discord Accounts](guest_players.md) for registration, permissions, and tag reporting.
+
 ### Items
 
 In a game of HvZ, admins often give out special items to players. Zombies get pool noodles to tag from a distance, humans get armor for an extra life, etc. Sometimes you want to track who has what item. The items system is a simple way to connect items to players on the Discord server. 

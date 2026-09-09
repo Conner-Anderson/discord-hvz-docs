@@ -1,22 +1,38 @@
-In PowerShell:
+In PowerShell, open this documentation project's folder first.
+Install uv if needed: https://docs.astral.sh/uv/getting-started/installation/
 
-To "build" a local version of the docs:
-	poetry run mike deploy [version]
-	Example: "poetry run mike deploy 0.2.1"
-	Use --update-aliases to set what is the "latest" version:
-	Example: "poetry run mike --update-aliases deploy 0.2.1 latest"
-To host a local server of the mike site:
-	poetry run mike serve
+To install the locked dependencies (uv can also install the required Python):
+    uv sync --locked
 
-To host an auto-updating version that is non-mike:
-	poetry run mkdocs serve
+To host an auto-updating preview of your working documentation:
+    uv run mkdocs serve
+
+To check a local build without changing any Git branches or publishing:
+    uv run mkdocs build --strict
+    The output is in site/.
+
+To build a version of the docs with Mike:
+    uv run mike deploy [version]
+    Example: uv run mike deploy 0.2.1
+    This commits the built version to the local gh-pages branch. It does not push.
+
+To set which version is "latest":
+    uv run mike deploy --update-aliases [version] latest
+    Example: uv run mike deploy --update-aliases 0.2.1 latest
+
+To host a local server of the versioned Mike site:
+    uv run mike serve
 
 To update an existing version on the online site:
-	poetry run mike deploy --push [version]
-	Example: "poetry run mike --push deploy 0.2.1"
+    uv run mike deploy --push [version]
+    Example: uv run mike deploy --push 0.2.1
 
 To add a new, latest version to the online site:
-	poetry run mike deploy --push --update-aliases [version] latest
-	Example: "poetry run mike --push --update-aliases deploy 0.2.1 latest"
+    uv run mike deploy --push --update-aliases [version] latest
+    Example: uv run mike deploy --push --update-aliases 0.2.1 latest
 
-To run any of the above commands without "poetry run", first use "poetry shell".
+Use the version you actually intend to release; the version numbers above are examples.
+Commands with --push publish to the configured remote.
+
+There is no need to activate a virtual environment: uv run uses this project's .venv.
+Commit uv.lock along with pyproject.toml when changing dependencies.

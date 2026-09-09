@@ -127,6 +127,50 @@ Removes one of the three game roles from all members on the server.
 This is useful for cleaning up after a completed game.
 
 
+## Guest Commands
+
+Guests are players without Discord accounts. See [Players without Discord Accounts](guest_players.md) for how to include them in your game.
+
+`/guest-admin` and `/guest-tag` are separate commands, both restricted to administrators by default. You can give roles or members access through Discord's [command permissions](server_setup.md#commands). All subcommands of `/guest-admin` share permissions, while `/guest-tag` can be allowed separately.
+
+Where an argument asks for `guest`, supply the guest's name, player ID, or tag code. This is a text field, rather than Discord's member picker.
+
+### guest-admin register
+`/guest-admin register <name> [oz]`
+
+Registers a guest and replies with their player ID and generated tag code in a message only you can see. Give this code to the guest so other players can tag them.
+
+Names must be distinct from other guest names. The guest starts as human unless `oz` is `true`, in which case they start as an original zombie. This command doesn't run the registration chatbot, and works even when ordinary registration is disabled.
+
+### guest-admin list
+`/guest-admin list`
+
+Lists the names, player IDs, tag codes, and factions of all guests in a message only you can see.
+
+### guest-admin info
+`/guest-admin info <guest>`
+
+Shows the selected guest's player ID, tag code, faction, and OZ status in a message only you can see. Useful when someone loses their code.
+
+### guest-admin rename
+`/guest-admin rename <guest> <name>`
+
+Changes a guest's display name. Their player ID, tag code, and tag history stay intact. The new name must be distinct from other guest names.
+
+### guest-admin oz
+`/guest-admin oz <guest> <setting>`
+
+Sets a guest's OZ status to `true` or `false` and updates their faction. Setting it to `true` makes them a zombie immediately. Setting it to `false` makes them human only if they have no active tags against them.
+
+### guest-tag
+`/guest-tag <guest> <tagged_code> [time]`
+
+Reports a tag made by the selected guest. `tagged_code` is the code of the person who was tagged, who can be a guest or a Discord player. `time` is when the tag happened, such as `3:04pm` or `3:04pm yesterday`, in the configured game timezone. If omitted, the current time is used.
+
+The guest must be a zombie and the tagged player must be human. Unlike `/tag create`, this command requires [tag_logging](config_options.md#tag_logging) to be enabled.
+
+Anyone allowed to use this command can report for any guest, even if the person reporting isn't a player. The guest gets credit for the tag, and the reporter's Discord ID is recorded separately. The confirmation is visible only to the reporter; the usual tag announcement is posted for the game.
+
 ## Tag Commands
 
 ### tag create

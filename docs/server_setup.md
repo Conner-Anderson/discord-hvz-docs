@@ -29,7 +29,7 @@ It is also recommended that you create a channel purely for sending the bot comm
 
 ### Commands
 
-Discord lets you manage command permissions through `Server Settings / Integrations / [Your Bot]`. Here you can give permissions to certain members and roles to use categories of commands. **By default, everyone can use everything.** That's bad, so restrict most commands to only your admins. The `/code` command is designed to be used by players though.
+Discord lets you manage command permissions through `Server Settings / Integrations / [Your Bot]`. Here you can give permissions to certain members and roles to use categories of commands. **Most commands are available to everyone by default.** That's bad, so restrict most commands to only your admins. The guest commands are an exception: `/guest-admin` and `/guest-tag` start restricted to administrators. The `/code` command is designed to be used by players though.
 
 ??? example "Recommended Starting Permissions"
     This is a good default permission setup to begin with. Disable commands for the `@everyone` role, and enable them for your administration role. Enable the bot in all channels.
@@ -37,6 +37,9 @@ Discord lets you manage command permissions through `Server Settings / Integrati
     Override the permissions for `/tag_tree` so your moderator team can use it.
     ![Discord Permissions Example](img/command_permissions_1.webp)  
     You can restrict the bot to only certain channels, but remember that the bot must have permission to view and post in the channels [listed here](config_options.md#channel_names).
+
+For games with guests, allow your moderators to use `/guest-admin`, and give trusted helpers access to `/guest-tag` to report tags for guests. These permissions are separate, so helpers don't need permission to register or edit guests. See [Players without Discord Accounts](guest_players.md#give-someone-permission).
+
 Currently, commands are sorted into groups: `member`, `tag`, etc. Discord doesn't let you vary permissions between commands within a group. This way of organizing commands may change, especially if people complain about it.
 
 !!! question "Next Steps"

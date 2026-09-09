@@ -25,7 +25,7 @@ There are two ways to install the software itself:
 
 	This allows one to edit any of the source code, and use [custom script processors](customized_chatbots.md#custom-processors). For those who intend to tinker with things under the hood, or even contribute to the project.
 
-	This install is a more involved process where more things can go wrong. If using Windows, it may even require a 6GB download.
+	uv handles the Python environment and dependencies for you. You will still need to finish the Discord and Google setup below.
 
 
 ??? info "Swapping Between Install Methods"
@@ -36,7 +36,7 @@ There are two ways to install the software itself:
 	- .env
 	- config.yml
 	- credentials.json
-	- hvzdb.db
+	- The database file named by [database_path](config_options.md#database_path) in config.yml
 	- scripts.yml
 	- token.json
 
@@ -62,99 +62,59 @@ There are two ways to install the software itself:
 
 
 ### Advanced Install
-??? warning "Advanced Install Instructions"
-	=== ":simple-windows: Windows"
 
-		These instructions assume you have already installed Python programs before.
+Discord-HvZ uses [uv](https://docs.astral.sh/uv/) to install Python dependencies and run the bot. Version 0.5.0 requires **Python 3.10**. uv can download that version for you, so you don't need to replace whatever Python your computer already uses.
 
-		1. Download an "Source code" .zip for Windows from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases){target=_blank} **OR** download the project directly from the branch you want. Unzip it to a convenient folder you intend to run the bot from.
+1. Download the source code .zip from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases){target=_blank}, or clone the branch you intend to use. Unzip it to a convenient folder you intend to run the bot from.
 
-		1. Install any [Python](https://www.python.org/downloads/){target=_blank} version from  3.9.7 to 3.10.x. If helping with development, use 3.9.x. Open a command prompt and use `python --version` to see what you already have installed, if anything.
+1. Install uv using the instructions for your operating system:
 
-		1. The below steps are how to install the project's dependencies from a `pyproject.toml` file with [`Poetry`](https://python-poetry.org/docs/){target=_blank}. There are other ways to do this which you are welcome to try.
+    === ":simple-windows: Windows"
 
-		1. Unfortunately, to compile C code that's a part of many Python modules, you need this ~6 GB software from Microsoft. Download the [Build Tools for Visual Studio Installer](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022){target=_blank}. Launch it, select **Desktop Development**, then install the minimum items as shown: 
-				
-			![Build Tools](img/build_tools.png)
+        Open PowerShell and run:
 
-		1. To install `Poetry` without polluting your system with its dependencies, use the following commands in your command prompt to install pipx for your user account. The second command lets you use the [`pipx`](https://pypa.github.io/pipx/installation/){target=_blank} module directly from the command prompt.
+        ```powershell
+        winget install --id=astral-sh.uv -e
+        ```
 
-			```
-			python -m pip install --user pipx
-			python -m pipx ensurepath
-			```
+        If WinGet isn't available, use one of the other methods in the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/){target=_blank}.
 
-		1. Use the following to install Poetry in its own isolated space on your system.
-			```
-			pipx install poetry
-			pipx ensurepath
-			```
-		1. Direct your command prompt to your Discord-HvZ folder.  
-		(Pro tip: You can do this by clicking once in the address bar of File Explorer, typing `cmd` or `powershell`, then hitting Enter.)
+    === ":material-linux: Linux"
 
-		1. Do you want to install Discord-HvZ with a Python version *other* than the one currently active? Use the command [here](https://python-poetry.org/docs/managing-environments/#switching-between-environments){target=_blank}.
+        Open a terminal and run the installer from the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/){target=_blank}:
 
-		1. Install the dependencies for Discord-HvZ in a virtual environment for this specific folder:
-			```
-			poetry install
-			```
-		If you're assisting with development, use this instead:
-			```
-			poetry install --with dev
-			```
+        ```sh
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+        ```
 
-		1. Create a file in the install directory called `.env` and open it in a text editor. Put `TOKEN=''` inside. You will fill the quotes with a Discord token in a later step.
+1. Restart your terminal so it can find uv, then direct it to your Discord-HvZ folder: the one containing `pyproject.toml`, `uv.lock`, and `config.yml`. Check that uv is available:
 
-		1. Run the bot:
-			```
-			poetry run main
-			```
-		The bot should run, then close with an error because there are still setup steps to complete. Keep reading below!
+    ```sh
+    uv --version
+    ```
 
+    On Windows, you can open a terminal in this folder by clicking the File Explorer address bar, typing `powershell`, and pressing Enter.
 
-	=== ":material-linux: Linux"
-		These instructions assume you have already installed Python programs before and are familiar with Linux.  
-		(I am not very familiar with Linux.)
+1. Install the dependencies:
 
-		1. Download an "Source code" .zip for Linux from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases){target=_blank} **OR** download the project directly from the branch you want. Unzip it to a convenient folder you intend to run the bot from.
+    ```sh
+    uv sync --locked --python 3.10
+    ```
 
-		1. Linux often comes with Python installed. Open a command prompt and use `python3 --version` to see what you already have installed. You may use any [Python](https://www.python.org/downloads/){target=_blank} version from  3.9.7 to 3.10.x. If helping with development, use 3.9.x. (Installing alternate Python versions on Linux is baffling to me. Good luck!)
+    uv creates a `.venv` folder for this installation and uses the dependency versions recorded in `uv.lock`. You don't need to activate that environment yourself. The project's developer tools are included by default.
 
-		1. The below steps are how to install the project's dependencies from a `pyproject.toml` file with [`Poetry`](https://python-poetry.org/docs/){target=_blank}. There are other ways to do this which you are welcome to try.
+1. Create a file in the install folder called `.env` and open it in a text editor. Put `TOKEN=''` inside. You will fill the quotes with a Discord token in a later step.
 
-		1. To install `Poetry` without polluting your system with its dependencies, use the following commands in your command prompt to install [`pipx`](https://pypa.github.io/pipx/). The second command lets you use the [`pipx`](https://pypa.github.io/pipx/installation/){target=_blank} module directly from the command prompt.
+1. Run the bot from the same folder:
 
-			```
-			sudo apt update
-			sudo apt install pipx
-			```
+    ```sh
+    uv run discord_hvz
+    ```
 
-		1. Use the following to install Poetry in its own isolated space on your system.
-			```
-			pipx install poetry
-			pipx ensurepath
-			```
-		1. Restart your command prompt and direct it to your Discord-HvZ folder.  
+    The bot will report that setup isn't complete yet. Keep reading below!
 
-		1. Do you want to install Discord-HvZ with a Python version *other* than the one currently active? Use the command [here](https://python-poetry.org/docs/managing-environments/#switching-between-environments){target=_blank}.
-
-		1. Install the dependencies for Discord-HvZ in a virtual environement for this specific folder:
-			```
-			poetry install
-			```
-		If you're assisting with development, use this instead:
-			```
-			poetry install --with dev
-			```
-
-		1. Create a file in the install directory called `.env` and open it in a text editor. Put `TOKEN=''` inside. You will fill the quotes with a Discord token in a later step.
-
-		1. Run the bot, with your command prompt directed to the project folder:
-			```
-			poetry run main
-			```
-		The bot should run, then close with an error because there are still setup steps to complete. Keep reading below!
-
+!!! info "Where the Files Go"
+    Keep `config.yml`, `scripts.yml`, `.env`, your database, and Google credentials in the top-level install folder. The Python source code is under `src/discord_hvz`, but you should run the bot from the top-level folder so it can find your game files.
 
 ## Creating a Discord Bot
 
@@ -227,17 +187,33 @@ To update the bot to a new version, follow the instructions for your installatio
 	1. Read the changelog for the version you want in [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and any between it and your current version. In the **Breaking Changes** sections, read the notes. This will tell you if you need to change any other files before starting your bot. For example, if there was a *breaking change* to `config.yml`, you'll need to either fix yours, or add your information to the new file.
 
 
-??? Warning "Advanced Install"
-	1. Backup your installation folder entirely!
-	1. Delete the contents of the original folder.
-	1. Read the changelog for the version you want in [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and any between it and your current version. In the **Breaking Changes** sections, read the notes. This will tell you if you need to change any other files before starting your bot. For example, if there was a *breaking change* to `config.yml`, you'll need to either fix yours, or add your information to the new file.
-	1. Download the source code .zip from [Releases](https://github.com/Conner-Anderson/discord-hvz/releases) and unzip it into the original install folder. Copy the following files from the backup into the install folder, accounting for any changes you need from the previous step:
-		- .env
-		- config.yml
-		- credentials.json
-		- \[your_database_name\].db
-		- scripts.yml
-		- token.json
-		- any other file you've customized
-	1. Update the dependencies by opening a command prompt in the top-level folder: the one containing config.yml. Run `poetry install`. If you used a non-Poetry method to install dependencies
-	in the first place, use that method to update based on pyproject.toml.
+??? warning "Advanced Install"
+    1. Shut down the bot and back up your installation folder, including the database.
+    1. Read the changelog for the version you want in [Releases](https://github.com/Conner-Anderson/discord-hvz/releases), and any versions between it and yours. The **Breaking Changes** sections explain whether your configuration or game data needs updating.
+    1. Download the new source code .zip and extract it into a new folder. Keep the old installation until you have checked that the new one works.
+    1. Copy your game files into the new folder, making any changes required by the changelog:
+
+        - `.env`
+        - `config.yml`
+        - `scripts.yml`
+        - The database file named by `database_path` in `config.yml`
+        - `credentials.json` and `token.json`, if using Google Sheets
+
+        If you have customized the source code or added processors, bring those changes across separately, accounting for the `src/discord_hvz` layout. Keep the new release's `pyproject.toml` and `uv.lock`; don't replace them with the old copies or copy the old virtual environment.
+
+    1. Install [uv](#advanced-install) if you haven't already. Open a terminal in the new installation folder and run:
+
+        ```sh
+        uv sync --locked --python 3.10
+        ```
+
+    1. Start the bot and check that it connects to your server and loads the game correctly:
+
+        ```sh
+        uv run discord_hvz
+        ```
+
+        Keep using this command from the new installation folder for future launches.
+
+!!! info "Updating from 0.4.0"
+    The source installation now uses uv. You can keep your existing game files and let uv create a fresh environment for the new release. The 0.5.0 bot adds the guest-player fields to a 0.4.0 database automatically; you don't need to start a new game or delete the database. See the changelog for the other migration notes, including changes to exported Sheet columns and population counts.
